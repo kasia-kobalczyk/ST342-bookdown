@@ -1,0 +1,472 @@
+# Infinity {#sec:intro}
+
+Can we toss a coin infinitely many times?
+
+Why is countable additivity important?
+
+We know that $\E[X+Y]=\E[X] + \E[Y]$, but why? It doesn't seem to follow
+from the usual definition that treats discrete and continuous random
+variables as hermetically separated entities. So, what is expectation,
+really?
+
+Do continuous random variables even exist?
+
+How small can a class $\cA$ of events be so that their probabilities
+determine $\Pb$?
+
+Why can we differentiate moment generating functions to compute moments?
+
+Our aim is to study concepts of Measure Theory useful to Probability
+Theory, providing a solid ground for the latter. A *measure* generalises
+the notion of area for arbitrary sets in Euclidean spaces
+$\mathbb{R}^d$, $d \geq 1$. We introduce the theory of measurable
+spaces, measurable functions, integral with respect to a measure,
+density of measures, product measures, and convergence of functions and
+random variables.
+
+Below we give examples that motivate the need for such a theory, discuss
+in which sense modern Measure Theory is the best we can hope for, and
+introduce the concept of infinite numbers and infinite sums used
+throughout the remaining chapters.
+
+## Events at infinity {#sub:eventsinfty}
+
+We know that $A_n \uparrow A$ implies $\Pb(A_n) \uparrow \Pb(A)$ which,
+assuming that $\Pb$ is non-negative and finitely additive, is equivalent
+to $\Pb$ being $\sigma$-additive (a shorthand for countably additive).
+Below we see examples where interesting models and events require some
+sort of limiting process in their study.
+
+::: {.example}
+Coin flips $\{0,1\}$.
+
+(i) Coin flip $N$ times, so the sample space is
+    $\Omega = \{(x_1, \dots, x_N): x_i \in \{0,1\}\}$. For $N=7$, define
+    the event $A = \{(x_1, \dots, x_N): x_1 = 1, x_5 = 0\}$. Rigorously,
+    the probability of this event is $\mathbb{P}(A) = 1/4$.
+
+(ii) Coin flip infinitely many times (if we can!), so the sample space
+     in this case is $\Omega = \{(x_1, x_2, \dots): x_i \in \{0,1\}\}$.
+     Let $B$ be the event of $10^6$ consecutive zeros,
+     i.e. $B = \bigcup_{n=1}^{\infty}\{\omega \in \Omega: x_n = x_{n+1} = \dots = x_{n+10^6-1} = 0\}$.
+     The probability $\mathbb{P}(B)$ is computed by first an estimate,
+     and then taking limit.
+:::
+
+::: {.example name="Ruin Probability"}
+Gambling with initial wealth $X_0 \in \mathbb{N}_0$. For any $t \geq 1$,
+we bet an integer amount and reach a wealth denoted by $X_t$. If at any
+point in time, wealth amounts to $0$, it remains $0$ forever. The sample
+space that indicates the wealth process is
+$\Omega = \{(x_0, x_1, \dots): x_i \in \N_0 \}$. We define the function
+of wealth after the $n$-th gamble by,
+$X_n : \Omega \to \mathbb{N}\cup\{0\}$, where $X_n(\omega) = x_n$. In
+fact, $(X_n)_{n \geq 0}$ is a Markov process. Then
+$$\{ \text{stay in state $ 0 $ eventually} \}
+= \bigcup_{n=0}^{\infty}\bigcap_{m = n}^{\infty}\{\omega \in \Omega: X_m(\omega) = 0\}.$$
+By monotonicity and continuity, its probability is $$\Pb(
+\{ \text{stay in state $ 0 $ eventually} \}
+)
+=
+\lim_{n\to\infty}
+\Pb(\{\omega \in \Omega: X_n(\omega) = 0\})
+ .$$
+:::
+
+::: {.example name="Brownian motion"}
+It is possible to construct a sequence of continuous piece-wise linear
+functions, which in the limit give a continuous nowhere differentiable
+random path that is at the core of Stochastic Analysis.
+:::
+
+::: {.example name="Uniform variable"}
+If $X \sim U[0,1]$, then $\Pb(X \ne x) = 1$ for every $x \in \R$.
+Nevertheless, $\Pb(X \ne x \text{ for every } x \in \R ) = 0$, so there
+will be some unlucky $x$ that will happen to be hit by $X$. Now for a
+countable set $A$, by $\sigma$-additivity we have
+$\Pb(X \in A) = \sum_{x \in A} \Pb(X=x) = 0$. Since $\Q$ is countable,
+we see that a uniform random variable is always irrational. Well, this
+is unless there is an uncountable number of such variables in the same
+probability space, in which case some unlucky variables may happen to
+take rational values.
+:::
+
+::: {.example}
+Let $X_1,X_2,X_3,\dots$ be independent and take value $\pm 1$ with
+probability $\frac{1}{2}$ each, and take $S_n = X_1 + \dots + X_n$. The
+strong law of large numbers says that, almost surely (a shorthand for
+"$\Pb(\cdots)=1$"), $\frac{S_n}{n} \to 0$ as $n \to \infty$. In order to
+show this, we need to express this event as a limit and compute its
+probability. The first part is simply:
+$$\{\lim_{n \to \infty} \tfrac{S_n}{n} = 0\}
+=
+%\{\forall k, \exists n_0, \forall n \geq n_0, |\tfrac{S_n}{n}| < \tfrac{1}{k} \}
+%=
+%\\
+%=
+\bigcap_{k=1}^\infty
+\bigcup_{n_0=1}^\infty
+\bigcap_{n=n_0}^\infty
+\{|\tfrac{S_n}{n}| < \tfrac{1}{k} \}
+.$$
+:::
+
+::: {.example name="Recurrence of a random walk"}
+For the sequence $(S_n)_n$ of the previous example, we know that
+$\frac{S_n}{n} \to 0$ with probability one. We want to consider whether
+$\frac{S_n}{n}$ converges to zero from above, from below, or
+oscillating, which is the same as asking whether $S_n=0$ infinitely
+often.
+:::
+
+## The measure problem {#sub:measureproblem}
+
+It is clear (it should be!) from previous examples that we want to work
+with measures that have nice *continuity* properties, so we can take
+limits. However, when the mass is spread over uncountably many sample
+points $\omega \in \Omega$, it is not possible to assign a measure to
+all subsets of $\Omega$ in a reasonable way.
+
+We would like to define a random variable uniformly distributed on
+$[0,1]$, by means of a function that assigns a weight to subsets of this
+interval. For instance, what is the probability that this number is
+irrational? What is the probability that its decimal expansion does not
+contain a 3?
+
+This is the same problem as assigning a 'length' to subsets of $\R$. We
+are also interested in defining a measure of 'area' on $\R^2$, 'volume'
+on $\R^3$, and so on.
+
+Of course, a good measure of length/area/volume/etc. on $\R^d$ should:
+
+1.  give the correct value on obvious sets, such as intervals and balls;
+
+2.  give the same value if we rotate or translate a set;
+
+3.  be $\sigma$-additive.
+
+We stress again that $\sigma$-additivity is equivalent to a measure being
+continuous, and we are not willing to resign that. On the other hand, we
+do not want more than that: each of the uncountably many points in
+$[0,1]$ alone has length zero, but all together they have length one;
+likewise, each sequence of coin tosses in $\{0,1\}^\N$ has probability
+zero, but all together they have probability one.
+
+The measure problem is the following.
+
+
+> There is no measure $m$ defined on all subsets of $\R^d$ which satisfy
+> all the reasonable properties listed above. What modern Measure Theory
+> does is to work with measures that are defined on a class of sets which
+> is large enough to be useful and small enough for these properties to
+> hold.
+
+
+The next example shows that there is no measure $m$ defined on all
+subsets of $\R^3$ which satisfies these three properties.
+
+::: {.example #banachtarski name="Banach-Tarski paradox"}
+Consider the ball $$B = \{x \in \R^3 : \|x\| \leq 1 \} .$$ There exist[^1]
+$k\in\N$, *disjoint* sets $A_1,\dots,A_{2k}$, and *isometries* (maps
+that preserve distances and angles) $S_1,\dots,S_{2k}:\R^3\to\R^3$ such
+that
+$$B = (A_1 \cup \dots \cup A_k) \cup (A_{k+1} \cup \dots \cup A_{2k}),$$
+$$B = S_1 A_1 \cup \dots \cup S_{k} A_{k}, \quad B = S_{k+1} A_{k+1} \cup \dots \cup S_{2k} A_{2k}.$$
+So $B$ was decomposed into *finitely many* pieces, which were later on
+moved around *rigidly* and *recombined* to produce two copies of $B$!
+Why is it a paradox? Finitely many pieces is not the issue in itself,
+since $\N$ can be decomposed into even and odd numbers, and they can be
+*compressed* (or stretched, in some sense) to produce two copies of
+$\N$. Rigidity alone is not the issue either, since we can move each of
+the *uncountably many* points of the segment $[0,1]$ to form the segment
+$[0,2]$. The paradox is that this magic was done with *rigid movements
+on finitely many pieces*. And here we can see the *measure problem*: if
+all these disjoint sets $A_1,\dots,A_{2k}$ were to have a volume
+$V_1,\dots,V_{2k} \geq 0$, what would be the volume of the ball $B$?
+:::
+
+The next example is not nearly as effective in impressing friends at a
+party, and would certainly not make a youtube video with 31 million
+views, but it has two advantages. First, it shows directly that the
+measure problem already occurs on $d=1$. Second, we can actually explain
+its proof in a third of a page rather than a dozen.
+
+::: {.example #vitali name="Vitali Set"}
+Consider the unit circle $\SSS^1$ with points indexed by turns instead of degrees or radians.
+This is the same as the interval $\SSS^1 = [0,1)$ with the angle
+addition operation $x \oplus y = x+y \mod 1$. There exists a set
+$E \subseteq [0,1)$ such that $\SSS^1$ is decomposed into disjoint
+$\{E_n\}_{n\in\N}$ which are translations of $E$. And here we see again
+the *measure problem*: by $\sigma$-additivity, if the length of $E$ is
+zero, then the length of the circle is zero; and if the length of $E$ is
+non-zero, then the length of the circle is infinite. So $E$ is not
+measurable.
+:::
+
+::: {.proof}
+*(Sketch)* Write $\Q \cap [0,1) = \{r_n\}_{n=1,2,3,\dots}$. For
+$E \subseteq \SSS^1$, let $E_n = \{ x \oplus r_n : x \in E \}$ be the
+*translation* of $E$ by $r_n$. We want to find a set $E$ such that
+
+1.  The sets $E_1,E_2,E_3,\dots$ are disjoint,
+
+2.  The union satisfies $\cup_n E_n = \SSS^1$.
+
+Start with a small set that satisfies the first property, such as
+$E = \{0\}$. Enlarge the set $E$ by adding a point
+$x \in \SSS^1 \setminus (\cup_n E_n)$. Adding such point does not break
+the first property (proof omitted), and may help the second one. Keep
+adding points this way, until it is no longer possible. When it is no
+longer possible, it can only be so because the second property is also
+satisfied.[^2]
+:::
+
+::: {.remark}
+It is often emphasised that the Banach-Tarski paradox and Vitali set
+depend crucially on the Axiom of Choice (for the above sketch of proof,
+it is concealed in the expression "keep adding until"). We may wonder
+what happens if we do not accept this axiom. In this case, we cannot
+prove the Banach-Tarski paradox, nor the existence of a Vitali set. But
+neither can we prove that they do not exist, so the measure problem
+persists.
+:::
+
+## Infinite numbers and infinite sums {#sub:infinitenumbers}
+
+We now define the set of extended real numbers and briefly discuss some
+its useful properties, then discuss the meaning of infinite sums, and
+move on to other perhaps philosophical questions about this theory.
+
+### Extended real numbers {#subsub:extended}
+
+We are about to start working with measures, and because measures can be
+infinite, and integrals can be negative infinite, we work with the set
+of *extended real numbers* $\oR := [-\infty,+\infty]$ that extends $\R$
+by adding two symbols $\pm \infty$. The novelty is of course to
+conveniently allow operations and comparisons involving these symbols.
+
+Basically, we can safely operate as one would reasonably guess:
+$$\begin{gathered}
+-\infty < -1 < 0 < 5 < +\infty,
+\
+-7 +\infty = +\infty,
+\
+(-2) \times (-\infty) = +\infty,
+\\
+|-\infty| = +\infty,
+\
+(+\infty) \times (-\infty) = -\infty,
+\
+a \leq b \implies a+x \leq b+x
+\\
+\lim_{n\to\infty} (2+n^2)
+=
+\lim_{n\to\infty} 2
++
+\lim_{n\to\infty} n^2
+=
+2 + \infty
+=
++\infty,\end{gathered}$$ etc. Since we will never need to divide by
+infinity, let us leave $\frac{x}{\infty}$ undefined (otherwise we would
+need to check that $x$ is finite).
+
+The non-obvious definition is $0 \cdot \infty = 0$. In Calculus, it
+would have been considered an indeterminate form, but in Measure Theory
+it is convenient to define it this way because the integral of a
+function that takes value $0$ on an interval of infinite length and
+$+\infty$ at a few points should still be $0$. That is, the area of a
+rectangle having zero width and infinite length is zero.
+
+Now some caveats. First, $\lim_n (a_n b_n) = (\lim_n a_n)(\lim_n b_n)$
+may fail in case it gives $0 \cdot \infty$. Also, note that now
+$a+b = a+c$ does not imply $b=c$. This can be false when $a=\pm \infty$.
+Likewise, $a<b$ no longer implies that $a+x < b+x$. So we should be
+careful with cancellations.
+
+
+> The one thing that is definitely not allowed, and that Measure Theory
+> does not handle well, is $$\text{" $ +\infty -\infty $ " !}$$ This is
+> simply forbidden, and if we will ever write this, it will be in
+> quotation marks and just in order to say that this case is excluded.
+
+
+The reader should consult [@Cohn13 §§B.4--B.6] and [@Tao11 p. xi] for a
+more complete description of operations on $\oR$.
+
+### Infinite sums
+
+Infinite sums of numbers on $[0,+\infty]$ are always well-defined
+through a rather simple formula. If $\Lambda$ is an index set and
+$x_\alpha \in [0,+\infty]$ for all $\alpha \in \Lambda$, we define:
+
+$$\nonumber
+\sum_{\alpha \in \Lambda} x_\alpha = \sup_{\stackrel{A \subseteq \Lambda}{A \text{ finite}}} \sum_{\alpha \in A} x_\alpha
+.$$ The set $\Lambda$ can be uncountable, but the sum can be finite only
+if $\Lambda_+ = \{\alpha:x_\alpha>0\}$ is countable (proof omitted). If
+$x_\alpha \in [-\infty,+\infty]$, we define
+$\Lambda_- = \{\alpha:x_\alpha<0\}$ and 
+\begin{equation}
+\sum_{\alpha \in \Lambda} x_\alpha =
+\sup_{\stackrel{A \subseteq \Lambda_+}{A \text{ finite}}} \sum_{\alpha \in A} x_\alpha
+\
+-
+\
+\sup_{\stackrel{A \subseteq \Lambda_-}{A \text{ finite}}} \sum_{\alpha \in A} -x_\alpha
+,
+(\#eq:infsum)
+\end{equation}
+as long as this difference does not give "$+\infty-\infty$" !
+
+The theory of conditionally convergent sums as 
+\begin{equation}
+\sum_{j \in \N} x_j
+=
+\lim_n
+\sum_{j = 1}^n x_j
+(\#eq:series)
+\end{equation}
+is hardly meaningful to us. In case the expression
+in \@ref(eq:infsum) is well-defined, we can write
+$(\Lambda_- \cup \Lambda_+) = \{\alpha_j\}_{j\in\N}$ by ordering these
+indices in any way we want (assuming for simplicity that these sets are
+countable), and formula \@ref(eq:series) will give the same result
+as \@ref(eq:infsum). Pretty robust.
+
+However, in case \@ref(eq:series) converges
+but \@ref(eq:infsum) is not well-defined (so it gives
+"$+\infty-\infty$"), we can re-order the index set $\N$ so
+that \@ref(eq:series) will give any number we want. This is definitely
+not the type of delicacy we want to handle here.
+
+For this reason, we will only
+use \@ref(eq:series) when either $$x_j \in [0,+\infty]$$ for all $j$,
+or when $$\sum_j |x_j| < \infty .$$ So there are two overlapping cases
+where we can work comfortably: non-negative extended numbers, or series
+which are absolutely summable.
+
+### Two different and overlapping theories
+
+The above tradeoff is already a good prelude to something rather deep
+that will appear constantly in upcoming chapters. Borrowing
+from [@Tao11]:
+
+
+> Because of this tradeoff, we will see two overlapping types of measure
+> and integration theory: the *non-negative* theory, which involves
+> quantities taking values in $[0, +\infty]$, and the *absolutely
+> integrable* theory, which involves quantities taking values in $\R$ or
+> $\C$.
+
+
+However, at the risk of leaving it for the reader to figure out some
+corner cases, we can (and will) extend these theories to a theory on
+$[-\infty,+\infty]$ by doing what we just did above. Namely, whereas the
+absolutely integrable theory requires that both terms
+in \@ref(eq:infsum) be finite, and the non-negative theory requires
+that one of them be zero, we only require that one of them be finite.
+
+We end this chapter with the simplest example of these overlapping
+theories
+
+::: {.theorem #seriestonelli name="Tonelli Theorem for series"}
+Let $x_{m,n} \in [0,+\infty]$ be a doubly-indexed sequence. Then
+$$\sum_{m=1}^\infty
+\sum_{n=1}^\infty
+x_{m,n}
+=
+\sum_{(m,n)\in\N^2} x_{m,n}
+=
+\sum_{n=1}^\infty
+\sum_{m=1}^\infty
+x_{m,n}
+.$$
+:::
+
+::: {.proof}
+A proof is given in §[7.2](#sub:fubini){reference-type="ref"
+reference="sub:fubini"} as an application of Tonelli Theorem, but here
+is a bare hands proof. For $A \subseteq \N^2$ finite, there exist
+$m,n\in\N$ such that
+$\sum_{A}x_{j,k} \leq \sum_{j=1}^n \sum_{k=1}^n x_{j,k}$. Conversely,
+given $m,n\in\N$, there is $A \subseteq \N^2$ such that
+$\sum_{A} x_{j,k} = \sum_{j=1}^n \sum_{k=1}^n x_{j,k}$. Therefore,
+$$\begin{gathered}
+\sum_{(j,k)\in\N^2} x_{j,k}
+=
+\sup_A \sum_{(j,k)\in A} x_{j,k}
+=
+\sup_{m,n\in\N} \sum_{j=1}^m \sum_{k=1}^n x_{j,k}
+=
+\\
+=
+\sup_{m\in\N}
+\sup_{n\in\N}
+\sum_{j=1}^m \sum_{k=1}^n x_{j,k}
+=
+\sup_{m\in\N} \sum_{j=1}^m
+\Big(
+\sup_{n\in\N} \sum_{k=1}^n
+x_{j,k}
+\Big)
+=
+\sum_{j=1}^\infty
+\Big(
+\sum_{k=1}^\infty
+x_{j,k}
+\Big)
+%
+.\end{gathered}$$ The other equality is proved in identical way.
+:::
+
+::: {.theorem #seriesfubini name="Fubini Series"}
+Let
+$x_{m,n} \in [-\infty,+\infty]$ be a doubly-indexed sequence. If
+$$\sum_{m=1}^\infty
+\sum_{n=1}^\infty
+|x_{m,n}|
+<\infty
+,$$ then $$\sum_{m=1}^\infty
+\sum_{n=1}^\infty
+x_{m,n}
+=
+\sum_{(m,n)\in\N^2} x_{m,n}
+=
+\sum_{n=1}^\infty
+\sum_{m=1}^\infty
+x_{m,n}
+.$$
+:::
+
+::: {.proof}
+Given in §[7.2](#sub:fubini){reference-type="ref"
+reference="sub:fubini"} as an application of Fubini Theorem.
+:::
+
+::: {.example}
+Consider the doubly-indexed sequence $$x_{m,n}=
+\begin{array}{|rrrrrr}
+\hline
+1 & -1 & 0 & 0 & 0 & \dots
+\\
+0 & 1 & -1 & 0 & 0 & \dots
+\\
+0 & 0 & 1 & -1 & 0 & \dots
+\\
+0 & 0 & 0 & 1 & -1 & \dots
+\\
+\vdots &
+\vdots &
+\vdots &
+\vdots &
+\ddots &
+\ddots
+\end{array}$$ which is not absolutely summable. Note that summing
+columns and then rows we get $1$, whereas summing rows and then columns
+we get $0$.
+:::
+
+[^1]: See <https://youtu.be/s86-Z-CbaHA> for a nice overview of the
+    proof.
+
+[^2]: See [@Cohn13 1.4.9] for a complete proof.

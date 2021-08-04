@@ -1,0 +1,42 @@
+--- 
+title: "Probability with Elementary Measure Theory"
+author: "Leonardo T. Rolla"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+link-citations: yes
+github-repo: rstudio/bookdown-demo
+description: "This is the lecture notes for the ST342 Probability with Elementary Measure Theory module at the University of Warwick."
+---
+
+# Preface {-}
+
+**Reusing this material**
+
+This licence allows users to distribute, remix, adapt, and build upon
+the material in any medium or format, so long as attribution is given to
+the creator. The licence allows for commercial use. If you remix, adapt,
+or build upon the material, you must license the modified version under
+identical terms.
+
+**Source code**
+
+If you make changes to these notes, please distribute the modified
+source code along with the typeset material, and please keep this
+request to those who receive it. This is a kind request from the author,
+not a legal requirement.
+
+**Attribution**
+
+This is an updated and expanded version of the lecture notes
+"Mathematics of Random Events" written in collaboration with Nikolaos
+Constantinou in 2020. Those notes were largely based on material typeset
+by Nikolaos Constantinou as a student, when the ST342 module was taught
+by Wei Wu in the Autumn 2019 term at Warwick. The module taught by Wei
+Wu was largely based on handwritten lecture notes received from Larbi
+Alili, which in turn were based on material previously developed by
+Sigurd Assing, Anastasia Papavasileiou, Jon Warren and Wilfrid Kendall.
+
+
+
