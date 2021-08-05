@@ -489,6 +489,13 @@ header in square brackets `[Section name]`, e.g.:
 Cross-references still work even when we refer to an item that is not on the 
 current page of the HTML output.
 
+We can reference the elements from Bibliografy with their keys using `@key` for
+only the author and year in brackets or `[@key]` for the both the author and 
+year in brackets, e.g.:
+
+- See @Cohn13 for more details
+- See [@Cohn13] for more details
+
 
 [^1]: See <https://youtu.be/s86-Z-CbaHA> for a nice overview of the
     proof.

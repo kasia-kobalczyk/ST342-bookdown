@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="index.html"/>
-
+<link rel="next" href="references.html"/>
 <script src="libs/header-attrs-2.9/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -96,6 +96,28 @@
 
 
 
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -126,6 +148,7 @@
 </ul></li>
 <li class="chapter" data-level="1.4" data-path="sec-intro.html"><a href="sec-intro.html#sub:dummy"><i class="fa fa-check"></i><b>1.4</b> Dummy subsection</a></li>
 </ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -278,7 +301,7 @@ on <span class="math inline">\(\R^3\)</span>, and so on.</p>
 continuous, and we are not willing to resign that. On the other hand, we
 do not want more than that: each of the uncountably many points in
 <span class="math inline">\([0,1]\)</span> alone has length zero, but all together they have length one;
-likewise, each sequence of coin tosses in <span class="math inline">\(\{0,1\}^\N\)</span> has probability
+likewise, each sequence of coin tosses in <span class="math inline">\(\{0,1\}^{\N}\)</span> has probability
 zero, but all together they have probability one.</p>
 <p>The measure problem is the following.</p>
 <blockquote>
@@ -405,7 +428,7 @@ does not handle well, is <span class="math display">\[\text{&quot; $ +\infty -\i
 simply forbidden, and if we will ever write this, it will be in
 quotation marks and just in order to say that this case is excluded.</p>
 </blockquote>
-<p>The reader should consult <span class="citation">[@Cohn13 §§B.4--B.6]</span> and <span class="citation">[@Tao11 p. xi]</span> for a
+<p>The reader should consult <span class="citation">(<a href="#ref-Cohn13" role="doc-biblioref">Cohn 2013, secs. B.4–B.6</a>)</span> and <span class="citation">(<a href="#ref-Tao11" role="doc-biblioref">Tao 2011, 126:xi</a>)</span> for a
 more complete description of operations on <span class="math inline">\(\oR\)</span>.</p>
 </div>
 <div id="infinite-sums" class="section level3" number="1.3.2">
@@ -459,7 +482,7 @@ which are absolutely summable.</p>
 <h3><span class="header-section-number">1.3.3</span> Two different and overlapping theories</h3>
 <p>The above tradeoff is already a good prelude to something rather deep
 that will appear constantly in upcoming chapters. Borrowing
-from <span class="citation">[@Tao11]</span>:</p>
+from <span class="citation">(<a href="#ref-Tao11" role="doc-biblioref">Tao 2011</a>)</span>:</p>
 <blockquote>
 <p>Because of this tradeoff, we will see two overlapping types of measure
 and integration theory: the <em>non-negative</em> theory, which involves
@@ -588,23 +611,31 @@ header in square brackets <code>[Section name]</code>, e.g.:</p>
 </ul>
 <p>Cross-references still work even when we refer to an item that is not on the
 current page of the HTML output.</p>
+<p>We can reference the elements from Bibliografy with their keys using <code>@key</code> for
+only the author and year in brackets or <code>[@key]</code> for the both the author and
+year in brackets, e.g.:</p>
+<ul>
+<li>See <span class="citation"><a href="#ref-Cohn13" role="doc-biblioref">Cohn</a> (<a href="#ref-Cohn13" role="doc-biblioref">2013</a>)</span> for more details</li>
+<li>See <span class="citation">(<a href="#ref-Cohn13" role="doc-biblioref">Cohn 2013</a>)</span> for more details</li>
+</ul>
 
 </div>
 </div>
-
-
-
-
-
-
-
-
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-Cohn13" class="csl-entry">
+Cohn, D. L. 2013. <em>Measure Theory</em>. 2nd ed. Birkhäuser, New York, NY. <a href="https://doi.org/10.1007/978-1-4614-6956-8">https://doi.org/10.1007/978-1-4614-6956-8</a>.
+</div>
+<div id="ref-Tao11" class="csl-entry">
+Tao, T. 2011. <em>An Introduction to Measure Theory, Graduate Studies in Mathematics</em>. Vol. 126. American Mathematical Society. <a href="https://doi.org/10.1090/gsm/126">https://doi.org/10.1090/gsm/126</a>.
+</div>
+</div>
 <div class="footnotes">
 <hr />
 <ol start="1">
 <li id="fn1"><p>See <a href="https://youtu.be/s86-Z-CbaHA" class="uri">https://youtu.be/s86-Z-CbaHA</a> for a nice overview of the
 proof.<a href="sec-intro.html#fnref1" class="footnote-back">↩︎</a></p></li>
-<li id="fn2"><p>See <span class="citation">[@Cohn13 1.4.9]</span> for a complete proof.<a href="sec-intro.html#fnref2" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>See <span class="citation">(<a href="#ref-Cohn13" role="doc-biblioref">Cohn 2013, 1.4.9</a>)</span> for a complete proof.<a href="sec-intro.html#fnref2" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
@@ -612,8 +643,8 @@ proof.<a href="sec-intro.html#fnref1" class="footnote-back">↩︎</a></p></li>
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

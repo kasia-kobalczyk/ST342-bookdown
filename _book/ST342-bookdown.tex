@@ -71,6 +71,11 @@
 \usepackage{booktabs}
 \usepackage{amsthm}
 
+\usepackage{makeidx}
+\makeindex
+\usepackage[nottoc]{tocbibind}
+\renewcommand{\bibname}{References}
+
 \newcommand{\dd}{\mathrm{d}}
 \newcommand*{\dmu}{\,\dd\mu}
 \newcommand{\s}{\ensuremath{\sigma}}
@@ -116,7 +121,7 @@
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
 \usepackage[]{natbib}
-\bibliographystyle{plainnat}
+\bibliographystyle{apalike}
 
 \title{Probability with Elementary Measure Theory}
 \author{Leonardo T. Rolla}
@@ -679,5 +684,21 @@ header in square brackets \texttt{{[}Section\ name{]}}, e.g.:
 
 Cross-references still work even when we refer to an item that is not on the
 current page of the HTML output.
+
+We can reference the elements from Bibliografy with their keys using \texttt{@key} for
+only the author and year in brackets or \texttt{{[}@key{]}} for the both the author and
+year in brackets, e.g.:
+
+\begin{itemize}
+\tightlist
+\item
+  See \citet{Cohn13} for more details
+\item
+  See \citep{Cohn13} for more details
+\end{itemize}
+
+\backmatter
+
+  \bibliography{references.bib}
 
 \end{document}
