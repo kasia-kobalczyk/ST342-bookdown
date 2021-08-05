@@ -149,7 +149,7 @@ We stress again that $\sigma$-additivity is equivalent to a measure being
 continuous, and we are not willing to resign that. On the other hand, we
 do not want more than that: each of the uncountably many points in
 $[0,1]$ alone has length zero, but all together they have length one;
-likewise, each sequence of coin tosses in $\{0,1\}^\N$ has probability
+likewise, each sequence of coin tosses in $\{0,1\}^{\N}$ has probability
 zero, but all together they have probability one.
 
 The measure problem is the following.
@@ -465,6 +465,30 @@ Consider the doubly-indexed sequence $$x_{m,n}=
 columns and then rows we get $1$, whereas summing rows and then columns
 we get $0$.
 :::
+
+## Dummy subsection {#sub:dummy}
+
+This section is to show how we cen refer to other sections and theorems. 
+
+Referencing the Theorems, exmalpes and equations is done by using their labels
+It is enough to enter `\@ref(label)` e.g.:
+
+- Theorem \@ref(thm:seriesfubini) is a very important one.
+- Don't forget to solve Example \@ref(exm:vitali) before the exam.
+- Equation \@ref(eq:series) can be quite tricky.
+
+To reference a section by its number we can do it the same way with `\@ref(label)`, e.g.:
+
+- In Section \@ref(sub:eventsinfty) we introduce the topic of ...
+
+To reference a section by its title we can do this by witting the section 
+header in square brackets `[Section name]`, e.g.:
+
+- In Section [Events at infinity] we introduce the topic of ...
+
+Cross-references still work even when we refer to an item that is not on the 
+current page of the HTML output.
+
 
 [^1]: See <https://youtu.be/s86-Z-CbaHA> for a nice overview of the
     proof.
