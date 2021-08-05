@@ -7,7 +7,7 @@ output: bookdown::gitbook
 documentclass: book
 link-citations: yes
 github-repo: rstudio/bookdown-demo
-description: "This is the lecture notes for the ST342 Probability with Elementary Measure Theory module at the University of Warwick."
+description: "These are the lecture notes for the ST342 Mathematics of Random Events module taught at the University of Warwick in the academic year of 2021/2022."
 ---
 
 # Preface {-}
