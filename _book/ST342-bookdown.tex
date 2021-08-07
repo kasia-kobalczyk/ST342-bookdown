@@ -76,12 +76,30 @@
 \usepackage[nottoc]{tocbibind}
 \renewcommand{\bibname}{References}
 
+\newtheorem{theorem}[equation]{Theorem}
+\newtheorem{proposition}[equation]{Proposition}
+\newtheorem{lemma}[equation]{Lemma}
+\newtheorem{corollary}[equation]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[equation]{Definition}
+\theoremstyle{remark}
+\newtheorem{examplex}[equation]{Example}
+\newtheorem{exercisex}[equation]{Exercise}
+\newtheorem{remarkx}[equation]{Remark}
+
+\newenvironment{example}{\pushQED{\qed}\renewcommand{\qedsymbol}{\scriptsize$\triangle$}\examplex}{\popQED\endexamplex}
+\newenvironment{exercise}{\pushQED{\qed}\renewcommand{\qedsymbol}{\scriptsize$\triangle$}\exercisex}{\popQED\endexercisex}
+\newenvironment{remark}{\pushQED{\qed}\renewcommand{\qedsymbol}{\scriptsize$\triangle$}\remarkx}{\popQED\endremarkx}
+
 \newcommand{\dd}{\mathrm{d}}
 \newcommand*{\dmu}{\,\dd\mu}
 \newcommand{\s}{\ensuremath{\sigma}}
 \newcommand{\sE}{\sigma(\cE)}
 \newcommand{\into}{\int_\Omega}
 \newcommand{\oR}{\overline{\R}}
+
+\let\mathbb\relax % remove the definition by unicode-math
+\DeclareMathAlphabet{\mathbb}{U}{msb}{m}{n}
 
 \newcommand{\C}{\mathbb{C}}
 \newcommand{\E}{\mathbb{E}}
@@ -132,25 +150,8 @@
 
 \title{Probability with Elementary Measure Theory}
 \author{Leonardo T. Rolla}
-\date{2021-08-05}
+\date{2021-08-07}
 
-\usepackage{amsthm}
-\newtheorem{theorem}{Theorem}[chapter]
-\newtheorem{lemma}{Lemma}[chapter]
-\newtheorem{corollary}{Corollary}[chapter]
-\newtheorem{proposition}{Proposition}[chapter]
-\newtheorem{conjecture}{Conjecture}[chapter]
-\theoremstyle{definition}
-\newtheorem{definition}{Definition}[chapter]
-\theoremstyle{definition}
-\newtheorem{example}{Example}[chapter]
-\theoremstyle{definition}
-\newtheorem{exercise}{Exercise}[chapter]
-\theoremstyle{definition}
-\newtheorem{hypothesis}{Hypothesis}[chapter]
-\theoremstyle{remark}
-\newtheorem*{remark}{Remark}
-\newtheorem*{solution}{Solution}
 \begin{document}
 \maketitle
 
@@ -657,6 +658,8 @@ we get \(0\).
 \hypertarget{sub:dummy}{%
 \section{Dummy subsection}\label{sub:dummy}}
 
+This is a dummy equation
+
 This section is to show how we cen refer to other sections and theorems.
 
 Referencing the Theorems, exmalpes and equations is done by using their labels
@@ -692,9 +695,9 @@ header in square brackets \texttt{{[}Section\ name{]}}, e.g.:
 Cross-references still work even when we refer to an item that is not on the
 current page of the HTML output.
 
-We can reference the elements from Bibliografy with their keys using \texttt{@key} for
-only the author and year in brackets or \texttt{{[}@key{]}} for the both the author and
-year in brackets, e.g.:
+We can link to the elements from the References (Bibliography) using their keys:
+\texttt{@key} gives the author and the year in brackets, use \texttt{{[}@key{]}} for both the
+author and the year in brackets, e.g.:
 
 \begin{itemize}
 \tightlist
