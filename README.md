@@ -1,6 +1,8 @@
+# ST342 - Mathematics of Random Events: Lecure Notes
+
 Lecture notes for the ST342 Mathematics of Random Events module taught at the University of Warwick in the academic year of 2021/2022.
 
-The structure of the repo:
+## Top-level directory layout
 
 ```
 ST342-bookdown/
