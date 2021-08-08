@@ -101,6 +101,9 @@
 \let\mathbb\relax % remove the definition by unicode-math
 \DeclareMathAlphabet{\mathbb}{U}{msb}{m}{n}
 
+% redefine missing \setminus in XeLaTex as \backslash
+\AtBeginDocument{\renewcommand{\setminus}{\mathbin{\backslash}}}
+
 \newcommand{\CC}{\mathbb{C}}
 \newcommand{\E}{\mathbb{E}}
 \newcommand{\N}{\mathbb{N}}
