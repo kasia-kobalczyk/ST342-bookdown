@@ -6,8 +6,8 @@
 ]{book}
 \usepackage{amsmath,amssymb}
 \usepackage{lmodern}
-\usepackage{ifxetex,ifluatex}
-\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+\usepackage{iftex}
+\ifPDFTeX
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
@@ -145,7 +145,7 @@
   \thm@postskip=\thm@preskip
 }
 \makeatother
-\ifluatex
+\ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
 \usepackage[]{natbib}
@@ -153,7 +153,7 @@
 
 \title{Probability with Elementary Measure Theory}
 \author{Leonardo T. Rolla}
-\date{2021-08-08}
+\date{2021-08-09}
 
 \begin{document}
 \maketitle
@@ -500,15 +500,14 @@ if \(\Lambda_+ = \{\alpha:x_\alpha>0\}\) is countable (proof omitted). If
 \(x_\alpha \in [-\infty,+\infty]\), we define
 \(\Lambda_- = \{\alpha:x_\alpha<0\}\) and
 \begin{equation}
+\label{eq:infsum}
 \sum_{\alpha \in \Lambda} x_\alpha =
 \sup_{\stackrel{A \subseteq \Lambda_+}{A \text{ finite}}} \sum_{\alpha \in A} x_\alpha
-\
 -
-\
 \sup_{\stackrel{A \subseteq \Lambda_-}{A \text{ finite}}} \sum_{\alpha \in A} -x_\alpha
 ,
-\label{eq:infsum}
 \end{equation}
+
 as long as this difference does not give ``\(+\infty-\infty\)'' !
 
 The theory of conditionally convergent sums as

@@ -307,18 +307,17 @@ if $\Lambda_+ = \{\alpha:x_\alpha>0\}$ is countable (proof omitted). If
 $x_\alpha \in [-\infty,+\infty]$, we define
 $\Lambda_- = \{\alpha:x_\alpha<0\}$ and 
 \begin{equation}
+(\#eq:infsum)
 \sum_{\alpha \in \Lambda} x_\alpha =
 \sup_{\stackrel{A \subseteq \Lambda_+}{A \text{ finite}}} \sum_{\alpha \in A} x_\alpha
-\
 -
-\
 \sup_{\stackrel{A \subseteq \Lambda_-}{A \text{ finite}}} \sum_{\alpha \in A} -x_\alpha
 ,
-(\#eq:infsum)
 \end{equation}
+
 as long as this difference does not give "$+\infty-\infty$" !
 
-The theory of conditionally convergent sums as 
+The theory of conditionally convergent sums as
 \begin{equation}
 \sum_{j \in \N} x_j
 =
