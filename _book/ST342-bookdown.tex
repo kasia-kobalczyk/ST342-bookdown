@@ -76,21 +76,6 @@
 \usepackage[nottoc]{tocbibind}
 \renewcommand{\bibname}{References}
 
-\newtheorem{theorem}[equation]{Theorem}
-\newtheorem{proposition}[equation]{Proposition}
-\newtheorem{lemma}[equation]{Lemma}
-\newtheorem{corollary}[equation]{Corollary}
-\theoremstyle{definition}
-\newtheorem{definition}[equation]{Definition}
-\theoremstyle{remark}
-\newtheorem{examplex}[equation]{Example}
-\newtheorem{exercisex}[equation]{Exercise}
-\newtheorem{remarkx}[equation]{Remark}
-
-\newenvironment{example}{\pushQED{\qed}\renewcommand{\qedsymbol}{\scriptsize$\triangle$}\examplex}{\popQED\endexamplex}
-\newenvironment{exercise}{\pushQED{\qed}\renewcommand{\qedsymbol}{\scriptsize$\triangle$}\exercisex}{\popQED\endexercisex}
-\newenvironment{remark}{\pushQED{\qed}\renewcommand{\qedsymbol}{\scriptsize$\triangle$}\remarkx}{\popQED\endremarkx}
-
 \newcommand{\dd}{\mathrm{d}}
 \newcommand*{\dmu}{\,\dd\mu}
 \newcommand{\s}{\ensuremath{\sigma}}
@@ -155,6 +140,23 @@
 \author{Leonardo T. Rolla}
 \date{2021-08-10}
 
+\usepackage{amsthm}
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}{Lemma}[chapter]
+\newtheorem{corollary}{Corollary}[chapter]
+\newtheorem{proposition}{Proposition}[chapter]
+\newtheorem{conjecture}{Conjecture}[chapter]
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[chapter]
+\theoremstyle{definition}
+\newtheorem{example}{Example}[chapter]
+\theoremstyle{definition}
+\newtheorem{exercise}{Exercise}[chapter]
+\theoremstyle{definition}
+\newtheorem{hypothesis}{Hypothesis}[chapter]
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+\newtheorem*{solution}{Solution}
 \begin{document}
 \maketitle
 
