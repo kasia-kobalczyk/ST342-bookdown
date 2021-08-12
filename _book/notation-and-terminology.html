@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Page not found | Probability with Elementary Measure Theory</title>
+  <title>Notation and Terminology | Probability with Elementary Measure Theory</title>
   <meta name="description" content="These are the lecture notes for the ST342 Mathematics of Random Events module taught at the University of Warwick in the academic year of 2021/2022." />
   <meta name="generator" content="bookdown 0.22.17 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Page not found | Probability with Elementary Measure Theory" />
+  <meta property="og:title" content="Notation and Terminology | Probability with Elementary Measure Theory" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Page not found | Probability with Elementary Measure Theory" />
+  <meta name="twitter:title" content="Notation and Terminology | Probability with Elementary Measure Theory" />
   
   <meta name="twitter:description" content="These are the lecture notes for the ST342 Mathematics of Random Events module taught at the University of Warwick in the academic year of 2021/2022." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-
+<link rel="prev" href="index.html"/>
+<link rel="next" href="1-sec-intro.html"/>
 <script src="libs/header-attrs-2.10/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -174,19 +174,131 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="page-not-found" class="section level1">
-<h1>Page not found</h1>
-<p>The page you requested cannot be found (perhaps it was moved or renamed).</p>
-<p>You may want to try searching to find the page's new location, or use
-the table of contents to find the page you are looking for.</p>
+<div id="notation-and-terminology" class="section level1 unnumbered">
+<h1>Notation and Terminology</h1>
+<div id="notation" class="section level2 unnumbered">
+<h2>Notation</h2>
+<table>
+<colgroup>
+<col width="19%" />
+<col width="80%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="left"><span class="math inline">\(\mathbb{N}\)</span></td>
+<td align="left"><span class="math inline">\(\{1,2,3,4,\dots\}\)</span></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(\mathbb{N}_0\)</span></td>
+<td align="left"><span class="math inline">\(\{0,1,2,3,\dots\}\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(A^c\)</span></td>
+<td align="left"><span class="math inline">\(\Omega \setminus A\)</span> (note that <span class="math inline">\(\Omega\)</span> is implicit)</td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(A_n \uparrow A\)</span></td>
+<td align="left"><span class="math inline">\(A_{n} \subseteq A_{n+1}\)</span> for all <span class="math inline">\(n\)</span> and <span class="math inline">\(\cup_n A_n = A\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(A_n \downarrow A\)</span></td>
+<td align="left"><span class="math inline">\(A_{n} \supseteq A_{n+1}\)</span> for all <span class="math inline">\(n\)</span> and <span class="math inline">\(\cap_n A_n = A\)</span></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(x_n \uparrow x\)</span></td>
+<td align="left"><span class="math inline">\(x_n\)</span> is non-decreasing and <span class="math inline">\(x_n \to x\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(x_n \downarrow x\)</span></td>
+<td align="left"><span class="math inline">\(x_n\)</span> is non-increasing and <span class="math inline">\(x_n \to x\)</span></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(\{f&lt;g\}\)</span></td>
+<td align="left"><span class="math inline">\(\{\omega\in\Omega:f(\omega)&lt;g(\omega)\}\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(\sup_n f_n\)</span></td>
+<td align="left">the function <span class="math inline">\(h\)</span> defined by <span class="math inline">\(h(\omega)=\sup_n f_n(\omega)\)</span> for each <span class="math inline">\(\omega\)</span></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(\max\{f_1,f_2\}\)</span></td>
+<td align="left"><span class="math inline">\(\sup_{n} f_n\)</span> over <span class="math inline">\(n \in \{1,2\}\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\([x]^+\)</span></td>
+<td align="left"><span class="math inline">\(\max\{0,x\}\)</span>, the positive part of <span class="math inline">\(x\)</span></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\([x]^-\)</span></td>
+<td align="left"><span class="math inline">\(\max\{0,-x\}\)</span>, the negative part of <span class="math inline">\(x\)</span>, so <span class="math inline">\(x = [x]^+ - [x]^-\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(\lfloor x \rfloor\)</span></td>
+<td align="left">the largest <span class="math inline">\(n \in \mathbb{Z}\)</span> such that <span class="math inline">\(n \leqslant x \in \mathbb{R}\)</span>, or <span class="math inline">\(x\)</span> if <span class="math inline">\(x=\pm\infty\)</span></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(\mu\)</span>-a.e.</td>
+<td align="left">except on a set <span class="math inline">\(A\)</span> with <span class="math inline">\(\mu(A)=0\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left">a.e.</td>
+<td align="left"><span class="math inline">\(\mu\)</span>-a.e. when <span class="math inline">\(\mu\)</span> is obvious from the context</td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(\mu\)</span>-a.e. <span class="math inline">\(\omega\)</span></td>
+<td align="left">every <span class="math inline">\(\omega \in \Omega \setminus A\)</span>, for some set <span class="math inline">\(A\in\mathcal{F}\)</span> with <span class="math inline">\(\mu(A)=0\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(\mathbb{P}\)</span>-a.s.</td>
+<td align="left">with probability 1</td>
+</tr>
+<tr class="even">
+<td align="left">a.s. on <span class="math inline">\(\omega\)</span></td>
+<td align="left">for <span class="math inline">\(\mathbb{P}\)</span>-a.e. <span class="math inline">\(\omega\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="terminology" class="section level2 unnumbered">
+<h2>Terminology</h2>
+<table>
+<tbody>
+<tr class="odd">
+<td align="left"><span class="math inline">\(\sigma\)</span>-additivity</td>
+<td align="left">Countable additivity</td>
+</tr>
+<tr class="even">
+<td align="left">Set</td>
+<td align="left">a sample space or a subset of a sample space</td>
+</tr>
+<tr class="odd">
+<td align="left">Event</td>
+<td align="left">a measurable subset of a sample space</td>
+</tr>
+<tr class="even">
+<td align="left">Collection</td>
+<td align="left">a set of subsets of a sample space</td>
+</tr>
+<tr class="odd">
+<td align="left">Class</td>
+<td align="left">a collection with some structure</td>
+</tr>
+<tr class="even">
+<td align="left">Family</td>
+<td align="left">a set of classes or functions</td>
+</tr>
+</tbody>
+</table>
+
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="1-sec-intro.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

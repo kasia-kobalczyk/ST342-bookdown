@@ -14,6 +14,13 @@ description: "These are the lecture notes for the ST342 Mathematics of Random Ev
 
 # Preface {-}
 
+
+This work is licensed under
+
+```{r, fig.alt="Creative Commons Attribution-ShareAlike license", fig.align='center', echo=FALSE, out.width="30%"}
+knitr::include_graphics("./images/by-sa.png")
+```
+
 **Reusing this material**
 
 This licence allows users to distribute, remix, adapt, and build upon

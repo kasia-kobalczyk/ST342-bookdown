@@ -1,6 +1,6 @@
 \usepackage{booktabs}
 \usepackage{amsthm}
-
+\usepackage{longtable}
 \usepackage{makeidx}
 \makeindex
 \usepackage[nottoc]{tocbibind}
@@ -15,6 +15,8 @@
 
 \let\mathbb\relax % remove the definition by unicode-math
 \DeclareMathAlphabet{\mathbb}{U}{msb}{m}{n}
+
+\setlength{\LTleft}{0pt}  % left-align all tables
 
 % redefine missing \setminus in XeLaTex as \backslash
 \AtBeginDocument{\renewcommand{\setminus}{\mathbin{\backslash}}}

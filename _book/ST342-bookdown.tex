@@ -70,7 +70,7 @@
 \setcounter{secnumdepth}{5}
 \usepackage{booktabs}
 \usepackage{amsthm}
-
+\usepackage{longtable}
 \usepackage{makeidx}
 \makeindex
 \usepackage[nottoc]{tocbibind}
@@ -85,6 +85,8 @@
 
 \let\mathbb\relax % remove the definition by unicode-math
 \DeclareMathAlphabet{\mathbb}{U}{msb}{m}{n}
+
+\setlength{\LTleft}{0pt}  % left-align all tables
 
 % redefine missing \setminus in XeLaTex as \backslash
 \AtBeginDocument{\renewcommand{\setminus}{\mathbin{\backslash}}}
@@ -138,7 +140,7 @@
 
 \title{Probability with Elementary Measure Theory}
 \author{Leonardo T. Rolla}
-\date{2021-08-10}
+\date{2021-08-12}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
@@ -168,6 +170,10 @@
 \chapter*{Preface}\label{preface}}
 \addcontentsline{toc}{chapter}{Preface}
 
+This work is licensed under
+
+\begin{center}\includegraphics[width=0.3\linewidth]{./images/by-sa} \end{center}
+
 \textbf{Reusing this material}
 
 This licence allows users to distribute, remix, adapt, and build upon
@@ -193,6 +199,56 @@ by Wei Wu in the Autumn 2019 term at Warwick. The module taught by Wei
 Wu was largely based on handwritten lecture notes received from Larbi
 Alili, which in turn were based on material previously developed by
 Sigurd Assing, Anastasia Papavasileiou, Jon Warren and Wilfrid Kendall.
+
+\hypertarget{notation-and-terminology}{%
+\chapter*{Notation and Terminology}\label{notation-and-terminology}}
+\addcontentsline{toc}{chapter}{Notation and Terminology}
+
+\hypertarget{notation}{%
+\section*{Notation}\label{notation}}
+\addcontentsline{toc}{section}{Notation}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.19}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.81}}@{}}
+\toprule
+\endhead
+\(\mathbb{N}\) & \(\{1,2,3,4,\dots\}\) \\
+\(\mathbb{N}_0\) & \(\{0,1,2,3,\dots\}\) \\
+\(A^c\) & \(\Omega \setminus A\) (note that \(\Omega\) is implicit) \\
+\(A_n \uparrow A\) & \(A_{n} \subseteq A_{n+1}\) for all \(n\) and \(\cup_n A_n = A\) \\
+\(A_n \downarrow A\) & \(A_{n} \supseteq A_{n+1}\) for all \(n\) and \(\cap_n A_n = A\) \\
+\(x_n \uparrow x\) & \(x_n\) is non-decreasing and \(x_n \to x\) \\
+\(x_n \downarrow x\) & \(x_n\) is non-increasing and \(x_n \to x\) \\
+\(\{f<g\}\) & \(\{\omega\in\Omega:f(\omega)<g(\omega)\}\) \\
+\(\sup_n f_n\) & the function \(h\) defined by \(h(\omega)=\sup_n f_n(\omega)\) for each \(\omega\) \\
+\(\max\{f_1,f_2\}\) & \(\sup_{n} f_n\) over \(n \in \{1,2\}\) \\
+\([x]^+\) & \(\max\{0,x\}\), the positive part of \(x\) \\
+\([x]^-\) & \(\max\{0,-x\}\), the negative part of \(x\), so \(x = [x]^+ - [x]^-\) \\
+\(\lfloor x \rfloor\) & the largest \(n \in \mathbb{Z}\) such that \(n \leqslant x \in \mathbb{R}\), or \(x\) if \(x=\pm\infty\) \\
+\(\mu\)-a.e. & except on a set \(A\) with \(\mu(A)=0\) \\
+a.e. & \(\mu\)-a.e. when \(\mu\) is obvious from the context \\
+\(\mu\)-a.e. \(\omega\) & every \(\omega \in \Omega \setminus A\), for some set \(A\in\mathcal{F}\) with \(\mu(A)=0\) \\
+\(\mathbb{P}\)-a.s. & with probability 1 \\
+a.s. on \(\omega\) & for \(\mathbb{P}\)-a.e. \(\omega\) \\
+\bottomrule
+\end{longtable}
+
+\hypertarget{terminology}{%
+\section*{Terminology}\label{terminology}}
+\addcontentsline{toc}{section}{Terminology}
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule
+\endhead
+\(\sigma\)-additivity & Countable additivity \\
+Set & a sample space or a subset of a sample space \\
+Event & a measurable subset of a sample space \\
+Collection & a set of subsets of a sample space \\
+Class & a collection with some structure \\
+Family & a set of classes or functions \\
+\bottomrule
+\end{longtable}
 
 \hypertarget{sec:intro}{%
 \chapter{Infinity}\label{sec:intro}}
