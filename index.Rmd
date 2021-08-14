@@ -18,7 +18,7 @@ description: "These are the lecture notes for the ST342 Mathematics of Random Ev
 This work is licensed under
 
 ```{r, fig.alt="Creative Commons Attribution-ShareAlike license", fig.align='center', echo=FALSE, out.width="30%"}
-knitr::include_graphics("./images/by-sa.png")
+knitr::include_graphics("./images/by-sa.svg")
 ```
 
 **Reusing this material**
