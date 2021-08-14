@@ -1,0 +1,83 @@
+# Measure Spaces
+
+The goal in this chapter is to define the notion of a measure space
+$(\Omega, \mathcal{F}, \mu)$ and work on examples to get familiar with
+the relevant concepts.
+
+Later on, we will focus our attention on two types of measures: the
+Lebesgue measure $m$ and probability measures $\mathbb{P}$.
+
+## Classes of sets {#sub:algebras}
+
+This may be the least pleasant topic, but we *need* to go through it.
+
+### $\sigma$-algebras
+
+We start with the notion of $\sigma$-algebra on a sample space $\Omega$.
+
+:::{.definition}
+**($\sigma$-algebra)**. Let $\Omega$ be a sample space. A collection $\mathcal{F}$ of subsets of
+$\Omega$ is called a *$\sigma$-algebra* (or $\sigma$-field) on $\Omega$, if
+
+1.  $\Omega \in \mathcal{F}$,
+
+2.  $A \in \mathcal{F} \implies A^c \in \mathcal{F}$,
+
+3.  $A_1, A_2,\dots \in \mathcal{F} \implies \bigcup_{i=1}^{\infty}A_i \in \mathcal{F}$.
+
+The pair $(\Omega, \mathcal{F})$ is called a *measurable space*. The
+sets $A \in \mathcal{F}$ are called *$\mathcal{F}$-measurable sets*, or
+*measurable sets* when $\mathcal{F}$ is clear from the context.
+:::
+
+In this case, it also satisfies
+
+4.  $\emptyset \in \mathcal{F}$,
+
+5.  $A_1, A_2,\dots \in \mathcal{F} \implies \bigcap_{i=1}^{\infty}A_i \in \mathcal{F}$.
+
+Let us review the following examples to build our intuition.
+
+:::{.example}
+For a given sample space $\Omega$, let
+$\mathcal{P}(\Omega) := \{A: A \subseteq \Omega\}$ be the power set of
+$\Omega$. Then $\mathcal{P}(\Omega)$ is a $\sigma$-algebra on $\Omega$.
+:::
+
+:::{.example}
+For a given sample space $\Omega$, let
+$\mathcal{A} = \{\emptyset, \Omega\}$. Then $\mathcal{A}$ defines a
+$\sigma$-algebra on $\Omega$, and it is called the *trivial
+$\sigma$-algebra*.
+:::
+
+:::{.exercise}
+Let $\Omega$ be a set and $\mathcal{A}$ the class of all subsets which
+are either countable or whose complement is countable. Prove that
+$\mathcal{A}$ is a $\sigma$-algebra.
+:::
+
+:::{.exercise}
+Let $\mathcal{A}_1$ and $\mathcal{A}_2$ be $\sigma$-algebras on a given
+sample space $\Omega$, and let
+$\mathcal{A}= \mathcal{A}_1 \cap \mathcal{A}_2$ be the class made of the
+sets that belong to both $\mathcal{A}_1$ and $\mathcal{A}_2$. Prove that
+$\mathcal{A}:= \mathcal{A}_1 \cap \mathcal{A}_2$ is also a
+$\sigma$-algebra on $\Omega$.
+:::
+
+:::{.exercise #pullback name="Pull-back"}
+If $f : \Omega_1 \to \Omega_2$ and $\mathcal{F}_2$ is a $\sigma$-algebra on
+$\Omega_2$, prove that
+$f^{-1}(\mathcal{F}_2) := \{ f^{-1}(A): A \in \mathcal{F}_2 \}$ is a
+$\sigma$-algebra on $\Omega_1$.
+:::
+
+So when a function goes from a sample space $\Omega_1$ to another space
+$\Omega_2$, it pulls back any $\sigma$-algebra $\mathcal{F}$ on
+$\Omega_2$ to a $\sigma$-algebra $\mathcal{G}$ on $\Omega_1$, as in the
+following diagram:
+```{r, fig.alt="TO DO", fig.align='center', echo=FALSE, out.width="25%"}
+knitr::include_graphics("./images/diagram1.png")
+```
+
