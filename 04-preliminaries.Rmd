@@ -1,0 +1,64 @@
+\backmatter
+
+# Preliminaries {-}
+
+### Countable sets {#countable-sets .unnumbered}
+
+See [@Cohn13 §A.6].
+
+### Extended real numbers {#extended-real-numbers .unnumbered}
+
+See § \@ref(subsub:extended) and [@Cohn13 §B.4].
+
+### Supremum and infimum {#supremum-and-infimum .unnumbered}
+
+See [@Cohn13 §B.5].
+
+### liminf, limsup, limit {#liminf-limsup-limit .unnumbered}
+
+See [@Cohn13 §B.6].
+
+One criterion of convergence is the following.
+
+::: {.lemma #convsubsub} 
+Let $(a_n)_n$ be a sequence of real numbers, and
+$a \in \mathbb{R}$. Then $\lim_n a_n = a$ if and only if, for every
+subsequence $(a_{n_k})_k$, there is a further subsequence
+$(a_{n_{k_j}})_j$ such that $\lim_j a_{n_{k_j}} = a$.
+:::
+
+::: {.proof}
+*(sketch)* Suppose $a_n \to a$ and let $a_{n_k}$ be a
+subsequence. For each $\varepsilon>0$,
+$\{n:|a_n-a| \geqslant\varepsilon\}$ is finite, so
+$\{k:|a_{n_k}-a| \geqslant\varepsilon \}$ is also finite, hence
+$a_{n_k}\to a$. Now suppose $a_n \not\to a$, so there is $\varepsilon>0$
+such that $\{n:|a_n-a| \geqslant\varepsilon\}$ is infinite. Taking
+$(n_k)_k$ from this set, no sub-subsequence $(a_{n_{k_j}})$ may converge
+to $a$.
+:::
+
+### Open and closed sets {#open-and-closed-sets .unnumbered}
+
+Given a metric space $(\Omega,d)$ and a subset $B \subseteq \Omega$, the
+*interior* of $B$ is the set of points $x \in \Omega$ for which there is
+a ball centred at $x$ and contained in $B$. A set
+$B \subseteq \mathbb{R}$ is called *open* if the interior of $B$ equals
+$B$. A set $B \subseteq \mathbb{R}$ is called *closed* if $B^c$ is open.
+The sets $\Omega$ and $\emptyset$ are both opened and closed.
+
+When $\Omega=\mathbb{R}$, the interior of $B \subseteq \mathbb{R}$ is
+the set
+$\{ x \in B : \exists \varepsilon>0, (x-\varepsilon,x+\varepsilon) \subseteq B \}$.
+Also, open intervals are open and closed intervals are closed. The only
+sets that are open and closed at the same time are $\mathbb{R}$ and
+$\emptyset$. Every open set is given by the union of countably many
+disjoint open intervals.
+
+Given two metric spaces $(\Omega,d)$ and $(\Omega',d')$ and a function
+$f:\Omega\to\Omega'$, we say that $f$ is *continuous* if the preimage of
+every open set is open.
+
+### Riemann integral - Darboux's definition {#riemann-integral-darboux-def .unnumbered}
+
+See [@Cohn13 §p.xv].
