@@ -2,6 +2,7 @@ bookdown::gitbook:
   css: style.css
   config:
     toc:
+      collapse: section
       before: |
         <li><a >ST342 Probability with Elementary Measure Theory</a></li>
       after: |
@@ -13,6 +14,6 @@ bookdown::gitbook:
 bookdown::pdf_book:
   includes:
     in_header: preamble.tex
-  latex_engine: xelatex
+  latex_engine: pdflatex
   citation_package: natbib
   keep_tex: yes
