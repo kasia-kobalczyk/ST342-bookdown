@@ -1,6 +1,6 @@
-\backmatter
+# (APPENDIX) Appendix {-}
 
-# Preliminaries {-}
+# Preliminaries
 
 ### Countable sets {#countable-sets .unnumbered}
 
