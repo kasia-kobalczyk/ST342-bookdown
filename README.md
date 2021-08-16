@@ -28,3 +28,11 @@ ST342-bookdown/
 - `references.bib`: Bibliographic data used with the `natbib` package to render the citations
 
 After rendering the book all outputs and are stored in the `_book` folder.
+
+
+## Issues and workarounds
+- In fenced `Div` blocks such as `:::{.proof}` compiled with book down `0.22` extra blank lines are insterted inside the corresponding latex environments. Correct output is produced when using book down `0.22.17`
+- `\mathds` is not supported by MathJax. For the double struck one 𝟙 symbol we define a new command \dsone which for the PDF output is defined as `\mathds{1}` and for the HTML we use the unicode character `\unicode{x1D7D9}`
+- `pdflatex` is preferred over `xelatex` because of the unexpected look of `\mathcal` and `\mathbb` fonts in the PDF output
+
+
