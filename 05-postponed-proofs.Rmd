@@ -9,7 +9,7 @@ $\sigma$-algebra.
 Exercise
 :::
 
-**Proof of Theorem \@ref(thm:dynkin)**
+:::{.proof name="Proof of Theorem \@ref(thm:dynkin)"}
 We define $\mathcal{G}$ as the smallest
 $\lambda$-system[^18] that contains the $\pi$-system $\mathcal{C}$, and
 show that $\mathcal{G}$ is also a $\pi$ system. By
@@ -37,9 +37,9 @@ smallest $\lambda$-system that contains $\mathcal{C}$, so
 $\mathcal{F}_{D}=\mathcal{G}$. Since this is true for every
 $D\in\mathcal{G}$, we conclude that $\mathcal{G}$ is a $\pi$-system,
 which completes the proof.[^19]
-$\qedhere$
+:::
 
-**Proof of Lemma \@ref(lem:outer)**
+:::{.proof name="Proof of Lemma \@ref(lem:outer)"}
 That $\mu^{*}(E)\leqslant\mu^{*}(F)$ when
 $E\subseteq F$ follows from $\mathcal{C}_{F}\subseteq\mathcal{C}_{E}$.
 
@@ -64,9 +64,9 @@ partition of $A$. Hence,
 $\mu(A)=\sum_{n}\mu(B_{n})\leqslant\sum_{n}\mu(A_{n})$. Since this holds
 for any $(A_{n})_{n}\in\mathcal{C}_{A}$, we have
 $\mu(A)\leqslant\mu^{*}(A)$, concluding the proof.[^20]
-$\qedhere$
+:::
 
-**Proof of Lemma \@ref(lem:caratheodory)**
+:::{.proof name="Proof of Lemma \@ref(lem:caratheodory)"}
 We make extensive use of Lemma \@ref(lem:outer). Let $\mathcal{F}= \mathcal{F}^*$.
 
 We first prove that $\mathcal{A}\subseteq\mathcal{F}$. Let
@@ -119,9 +119,9 @@ where the first equality holds since $G_{n}\in\mathcal{F}$ by Step 1,
 and and second equality follows from Step 2.
 
 By Lemma \@ref(lem:algebrasigma), this concludes the proof.[^21]
+:::
 
-
-**Proof of Lemma \@ref(lem:premeasure)**
+:::{.proof name="Proof of Lemma \@ref(lem:premeasure)"}
 It is enough to show that, if
 $A_{n}\downarrow\emptyset$ in $\mathcal{A}$, then $m(A_{n})\to0$ (why?).
 Let $A_{n}$ be a decreasing sequence with
@@ -141,7 +141,7 @@ compact sets by Heine-Borel Theorem,
 $\cap_{n=1}^{\infty}K_{n}\neq\emptyset$. Hence,
 $\emptyset\ne\cap_{n=1}^{\infty}K_{n}=\cap_{n=1}^{\infty}\overline{B_{n}}\subseteq\cap_{n=1}^{\infty}A_{n}$,
 concluding the proof.[^22]
-$\qedhere$
+:::
 
 We now move on to the proof of the Radon-Nikodým Theorem.
 
@@ -200,7 +200,7 @@ $\alpha\leqslant\mu(A\cup N)=\mu(A)+\mu(N)=\mu(A)+\alpha$, so
 $\mu(B)\geqslant\mu(A)\geqslant 0$, completing the proof.
 :::
 
-**Proof of Theorem \@ref(thm:radonnikodym)**
+:::{.proof name="Proof of Theorem \@ref(thm:radonnikodym)"}
 We split the proof into 3 main steps.
 
 *Step 1.* We can assume that $\mu$ and $\nu$ are finite.
@@ -259,11 +259,11 @@ hence $\mu(N)=0$. Since $\nu$ is absolutely continuous with respect to
 $\mu$, we have $\nu(N)=0$. Therefore, $\nu_{\varepsilon}(N)=0$ and
 $\nu_{\varepsilon}(A)\geqslant 0$ for all $A\in\mathcal{F}$. As
 discussed above, this completes the proof.[^24]
-$\qedhere$
+:::
 
 We finally give the postponed proofs from \@ref(sec:prodfubi).
 
-**Proof of Example \@ref(exm:2dimborel)**
+:::{.proof name="Proof of Example \@ref(exm:2dimborel)"}
 First, we show
 $\mathcal{B}(\mathbb{R}^2) \subseteq \mathcal{B}(\mathbb{R}) \otimes \mathcal{B}(\mathbb{R})$.
 Let
@@ -292,9 +292,9 @@ and hence $$\nonumber
 \mathcal{B}(\mathbb{R}) \times \mathcal{B}(\mathbb{R}) = \sigma(\mathcal{E}) \times \sigma(\mathcal{E}) \subseteq \sigma(\mathcal{E}\times \mathcal{E}) = \sigma(\mathcal{E}^2) = \mathcal{B}(\mathbb{R}^2),$$
 Therefore,
 $\mathcal{B}(\mathbb{R}) \otimes\mathcal{B}(\mathbb{R}) = \sigma(\mathcal{B}(\mathbb{R}) \times \mathcal{B}(\mathbb{R})) \subseteq \mathcal{B}(\mathbb{R}^2)$.
+:::
 
-
-**Proof of Lemma \@ref(lem:sectionprop)**
+:::{.proof name="Proof of Lemma \@ref(lem:sectionprop)"}
 For the first statement, we show that each section $E_x$ is
 $\mathcal{F}_2$-measurable. A symmetric reasoning can be used to show
 that each section $E^y$ is $\mathcal{F}_1$-measurable. Fix
@@ -328,9 +328,9 @@ is $\mathcal{F}_2$-measurable. Note that $(f_x)^{-1}(D) = (f^{-1}(D))_x$
 for any $D \in \mathcal{B}(\mathbb{R})$. Combined with the first
 statement, this implies that $(f_x)^{-1}(D) \in \mathcal{F}_2$ for every
 $D \in \mathcal{B}$, concluding the proof.[^25]
-$\qedhere$
+:::
 
-**Proof of Lemma \@ref(lem:measurefn)**
+:::{.proof name="Proof of Lemma \@ref(lem:measurefn)"}
 We show that $x \mapsto \nu(E_x)$ is
 $\mathcal{F}_1$-measurable, the other statement is analogous.
 
@@ -377,9 +377,9 @@ is $\mathcal{F}_1$-measurable, hence
 $$\nu(E_x) = \sum_{i=1}^{\infty}\nu(B \cap D_i) = \sum_{i=1}^{\infty}\nu_i(E_x),$$
 is also $\mathcal{F}_1$-measurable. Arguing similarly for the function
 $y \mapsto \mu(E^y)$ finishes the proof.[^26]
-$\qedhere$
+:::
 
-**Proof of Theorem \@ref(thm:prodmeasure)**
+:::{.proof name="Proof of Theorem \@ref(thm:prodmeasure)"}
 We start with uniqueness of the measure $\mu \otimes\nu$. Since
 $\mathcal{F}_1 \times \mathcal{F}_2$ is a $\pi$-system that generates
 $\mathcal{F}_1 \otimes\mathcal{F}_2$, we can apply the
@@ -422,7 +422,7 @@ $$(\mu \otimes\nu)_1(A \times B) = \mu(A) \nu(B)
 ,$$ and analogously we can prove
 $(\mu \otimes\nu)_2 (A \times B) = \mu(A) \nu(B)$. As noted in the first
 paragraph, this concludes the proof.[^27]
-$\qedhere$
+:::
 
 [^1]: See [](\detokenize{https://youtu.be/s86-Z-CbaHA}) for a nice
     overview of the proof.
