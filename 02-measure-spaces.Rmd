@@ -82,7 +82,22 @@ So when a function goes from a sample space $\Omega_1$ to another space
 $\Omega_2$, it pulls back any $\sigma$-algebra $\mathcal{F}$ on
 $\Omega_2$ to a $\sigma$-algebra $\mathcal{G}$ on $\Omega_1$, as in the
 following diagram:
-```{r, fig.alt="TO DO", fig.align='center', echo=FALSE, out.width="25%"}
+
+```{r, include=knitr::is_latex_output(), echo=FALSE}
+knitr::raw_latex("
+\\begin{equation*}
+\\vcenter{\\xymatrix{
+  \\Omega_1  \\ar[d]^{f}  \\ar@{.}[r]
+               &  \\cG
+\\\\
+  \\Omega_2  \\ar@{.}[r]
+               & \\cF  \\ar@{->}[u]_{f^{-1}}
+}}
+\\end{equation*}")
+```
+
+
+```{r, fig.alt="TO DO", fig.align='center', echo=FALSE, out.width="25%", include=knitr::is_html_output()}
 knitr::include_graphics("./images/diagram1.png")
 ```
 
