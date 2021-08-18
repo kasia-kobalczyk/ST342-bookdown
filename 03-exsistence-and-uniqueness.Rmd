@@ -112,9 +112,8 @@ $\mathcal{D}$ contains $\mathcal{C}$, then $\mathcal{D}$ contains
 $\sigma(\mathcal{C})$.
 :::
 
-
 ::: {.proof}
-*Proof.* Given on page \
+Given in [Postponed proofs]
 :::
 
 ::: {.proof name="Proof of Theorem \@ref(thm:measurepilambda)"}
@@ -236,13 +235,12 @@ what should be the measure of a set seen from the outside.
 
 ::: {.lemma #outer name="Properties of the outer measure"}
 The outer measure $\mu^{*}$ satisfies:
-
 1.  For every $E \subseteq F \subseteq \Omega$,
     $\mu^{*}(E) \leqslant\mu^{*}(F)$,
-
+    
 2.  For $(E_n)_{n\in\mathbb{N}}$ subsets of $\Omega$, then
     $\mu^{*}(\cup_{n} E_n ) \leqslant\sum_{n}\mu^{*}(E_n)$,
-
+    
 3.  For $A \in \mathcal{A}$, $\mu^{*}(A) = \mu(A)$.
 :::
 
@@ -369,7 +367,7 @@ $A \not \in \mathcal{B}(\mathbb{R})$.
 
 :::{.proof}
 *(sketch)* This is just expanding part of the sketch in
-Example \@ref(ex:vitali) If $A$ were in $\mathcal{B}(\mathbb{R})$, we
+Example \@ref(exm:vitali) If $A$ were in $\mathcal{B}(\mathbb{R})$, we
 could define $m(A) \geqslant 0$. Then by translation invariance, for
 each $r_n \in \mathbb{Q}\cap [0,1)$, defining
 $A_n = \{ x+r_n \mod 1 : x \in A \}$, we would have $m(A_n)=m(A)$.
@@ -378,6 +376,7 @@ $\cup_n A_n = [0,1)$. So
 $m([0,1))=\sum_{n\in\mathbb{N}} m(A_n) = \sum_{n\in\mathbb{N}} m(A)$
 which is either $0$ or $\infty$ depending on whether $m(A)>0$ or not.
 This contradicts $m([0,1))=1$.
+:::
 
 ### Lebesgue-Stieltjes measures {#sub:lebstiel}
 
