@@ -343,8 +343,12 @@ Note from Lemma \@ref(lem:sectionprop) (i) that, given
 $E \in \mathcal{F}_1 \otimes\mathcal{F}_2$, each section $E_x$ lies in
 $\mathcal{F}_2$, so that the function $x \mapsto \nu(E_x)$ is
 well-defined. If $A \in \mathcal{F}_1$ and $B \in \mathcal{F}_2$, we
-have $$\label{eq:prodaux}
-\nu((A \times B)_x) = \nu(B) \dsone_A(x),$$ which implies that
+have 
+\begin{equation}
+(\#eq:prodaux)
+\nu((A \times B)_x) = \nu(B) \dsone_A(x)
+\end{equation}
+which implies that
 $\mathcal{G}$ contains $\mathcal{F}_1 \times \mathcal{F}_2$. Note that
 $\mathcal{F}_1 \times \mathcal{F}_2$ defines a $\pi$-system on
 $\Omega_1 \times \Omega_2$. We now show that $\mathcal{G}$ is a
