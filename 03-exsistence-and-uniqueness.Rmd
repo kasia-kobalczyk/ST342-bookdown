@@ -71,13 +71,12 @@ class $\mathcal{D}$ of subsets of $\Omega$ is a *$\lambda$-system on
 $\Omega$*, if $\Omega \in \mathcal{D}$ and it is closed under complement
 and countable disjoint unions, that is,
 
-1.  $\Omega \in \mathcal{D}$,
+$1. \ \Omega \in \mathcal{D}$,
 
-2.  $A \in \mathcal{D}\implies A^c \in \mathcal{D}$,
+$2.\ A \in \mathcal{D}\implies A^c \in \mathcal{D}$,
 
-3.  $\{A_i\}_{i=1}^{\infty} \subseteq \mathcal{D}, \ A_i \cap A_j = \emptyset \ \forall i \neq j \implies \bigcup_{i=1}^{\infty}A_i \in \mathcal{D}$.
+$3. \ \{A_i\}_{i=1}^{\infty} \subseteq \mathcal{D}, \ A_i \cap A_j = \emptyset \ \forall i \neq j \implies \bigcup_{i=1}^{\infty}A_i \in \mathcal{D}$.
 :::
-
 
 These concepts are useful when the (large and complicated) class of sets
 satisfying a given property will naturally form a $\lambda$-system, and
@@ -236,13 +235,13 @@ what should be the measure of a set seen from the outside.
 ::: {.lemma #outer name="Properties of the outer measure"}
 The outer measure $\mu^{*}$ satisfies:
 
-1.  For every $E \subseteq F \subseteq \Omega$,
+$1.$  For every $E \subseteq F \subseteq \Omega$,
     $\mu^{*}(E) \leqslant\mu^{*}(F)$,
     
-2.  For $(E_n)_{n\in\mathbb{N}}$ subsets of $\Omega$, then
+$2.$  For $(E_n)_{n\in\mathbb{N}}$ subsets of $\Omega$, then
     $\mu^{*}(\cup_{n} E_n ) \leqslant\sum_{n}\mu^{*}(E_n)$,
     
-3.  For $A \in \mathcal{A}$, $\mu^{*}(A) = \mu(A)$.
+$3.$  For $A \in \mathcal{A}$, $\mu^{*}(A) = \mu(A)$.
 :::
 
 ::: {.proof}
