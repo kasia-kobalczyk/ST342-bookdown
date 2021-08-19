@@ -35,4 +35,6 @@ After rendering the book all outputs and are stored in the `_book` folder.
 - `\mathds` is not supported by MathJax. For the double struck one 𝟙 symbol we define a new command \dsone which for the PDF output is defined as `\mathds{1}` and for the HTML we use the unicode character `\unicode{x1D7D9}`
 - `pdflatex` is preferred over `xelatex` because of the unexpected look of `\mathcal` and `\mathbb` fonts in the PDF output
 - In the Postponed Proofs Appendix `:::{.proof name="Proof of Theorem \@ref(label)}` blocks are used to write the proofs. This produces expected results in the PDF output while in the HTML the proofs begin with *Proof. (Proof of Thoerem)*
+- In custom `div` block environments markdown lists (unnumbered and numbered) are not generated in the PDF output is the list is the last element of the environment. If the list is followed by a regular text, then it is generated properly. To omit this issue numbers of the list are put in mathinline style using the `$` symbols
+- the `xymatrix` pacakge cannot be used for the HTML output, it is not supported by MathJax. Any diagram using `xymatrix` is therefore not rendered in the HTML otput and the message directing to the PDF version of the notes is displayed.
 
