@@ -113,7 +113,7 @@ $\sigma(\mathcal{C})$.
 :::
 
 ::: {.proof}
-Given in [Postponed proofs]
+Given in appendix\ [Postponed proofs].
 :::
 
 ::: {.proof name="Proof of Theorem \@ref(thm:measurepilambda)"}
@@ -235,6 +235,7 @@ what should be the measure of a set seen from the outside.
 
 ::: {.lemma #outer name="Properties of the outer measure"}
 The outer measure $\mu^{*}$ satisfies:
+
 1.  For every $E \subseteq F \subseteq \Omega$,
     $\mu^{*}(E) \leqslant\mu^{*}(F)$,
     
@@ -245,7 +246,7 @@ The outer measure $\mu^{*}$ satisfies:
 :::
 
 ::: {.proof}
-Given in [Postponed proofs]
+Given in appendix\ [Postponed proofs].
 :::
 
 Loosely speaking, problematic sets such as those of
@@ -277,7 +278,7 @@ $\mathcal{F}$ is a measure.*
 :::
 
 ::: {.proof}
-Given in [Postponed proofs]
+Given in appendix\ [Postponed proofs].
 :::
 
 From the two lemmas above, we have that

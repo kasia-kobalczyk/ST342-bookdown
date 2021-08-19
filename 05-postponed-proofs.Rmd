@@ -6,7 +6,7 @@ $\sigma$-algebra.
 :::
 
 :::{.proof}
-Exercise
+Exercise.
 :::
 
 :::{.proof name="Proof of Theorem \@ref(thm:dynkin)"}
