@@ -228,7 +228,7 @@ $$\mathcal{D}_E = \Big\{ (A_n)_n : A_n \in \mathcal{A}\text{ for all } n \text{ 
 \mu^{*}(E) =
 \inf_{(A_n)\in\mathcal{D}_E} \sum_n \mu(A_n).
 %\inf\left\{\sum_{i=1}^{\infty}\mu(A_i): A_j \in \mathcal{A}, \bigcup_{i=1}^{\infty}A_i \supseteq E\right\}
-\end{equation},
+\end{equation}
 One might think of the outer measure as a conservative upper bound for
 what should be the measure of a set seen from the outside.
 
