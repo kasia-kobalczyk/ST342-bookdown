@@ -98,13 +98,14 @@ $\mathcal{G}\supseteq \sigma(f)$. The latter condition is interpreted as
 $\mathcal{G}$ being *finer* than $\sigma(f)$.
 :::
 
-::: {.definition}
+::: {.definition #mupush}
 If $f$ is a measurable function from a measure space
 $(\Omega_1,\mathcal{F}_1,\mu)$ to $(\Omega_2,\mathcal{F}_2)$, we can
 define the *push-forward* measure $f_*\mu$ on $(\Omega_2,\mathcal{F}_2)$
 by
 $$(f_* \mu)(A) = \mu(\{\omega\in\Omega_1 : f(\omega) \in A\}) = \mu(f^{-1}(A))
-.$$ This gives an enlarged diagram as follows: $$\label{eq:mupush}
+.$$ This gives an enlarged diagram as follows: 
+$$
 \vcenter{\xymatrix{
   \Omega_1  \ar[d]^{f}  \ar@{.}[r]
                &  \sigma(f)  \ar@{.}[r]
@@ -113,7 +114,8 @@ $$(f_* \mu)(A) = \mu(\{\omega\in\Omega_1 : f(\omega) \in A\}) = \mu(f^{-1}(A))
   \Omega_2  \ar@{.}[r]
                & \mathcal{F}_2  \ar@{->}[u]_{f^{-1}}  \ar@{.}[r]
                            &  f_* \mu
-}}$$
+}}
+$$
 :::
 
 Quite often, it is unhandy to check measurability using the whole target
@@ -406,7 +408,7 @@ $$\{af+b < c\} = \{af < c-b\} =
 \{f > \frac{c-b}{a}\}, & a < 0
 \end{cases}$$ where
 $\{f < \frac{c-b}{a}\}, \{f > \frac{c-b}{a}\} \in \mathcal{F}$, by
-Lemma\ \@ref(#lem:borelcriteria) 3 and 4.
+Lemma\ \@ref(lem:borelcriteria) 3 and 4.
 
 Now suppose $f + g$ is well-defined for all $\omega$. For every
 $b \in \mathbb{R}$, it follows that $$\begin{aligned}
@@ -421,7 +423,7 @@ Borel. We have that $$\{f^2 > a\} =
 \{f < -\sqrt{a}\} \cup \{f > \sqrt{a}\}, & a \geqslant 0
 \end{cases}$$ where $\Omega \in \mathcal{F}$ and
 $\{f < -\sqrt{a}\} \cup \{f > \sqrt{a}\} \in \mathcal{F}$, by
-Lemma\ \@ref(#lem:borelcriteria) 3. and 4..
+Lemma\ \@ref(lem:borelcriteria) 3. and 4..
 
 Now suppose $f$ and $g$ are both finite Borel functions. Notice that we
 can write $$fg = \frac{1}{4}[(f+g)^2 - (f-g)^2],$$ where $(f+g)^2$ and

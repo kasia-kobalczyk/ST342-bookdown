@@ -3,3 +3,77 @@
 `r if (knitr::is_html_output()) '
 # References {-}
 '`
+
+[^1]: See [](\detokenize{https://youtu.be/s86-Z-CbaHA}) for a nice
+    overview of the proof.
+
+[^2]: See [@Cohn13 1.4.9] for a complete proof.
+
+[^3]: Note that $(a,b]=\emptyset$ when $b\leqslant a$, so
+    $\emptyset\in\mathcal{C}$ and $\mathcal{C}$ is closed under
+    intersections.
+
+[^4]: Expanded from [@Cohn13 1.6.4].
+
+[^5]: This requires the Hahn-Banach Theorem which is a topic of
+    Functional Analysis.
+
+[^6]: Example from [@Bart95].
+
+[^7]: Based on [@Shir16 §2.6.7].
+
+[^8]: Let us prove that it is not Riemann integrable. Consider any
+    partition of $[0,1]$ into finitely many non-degenerate intervals,
+    and notice that all intervals will contain both rational and
+    irrational numbers. Thus, every step function $g \leqslant f$ must
+    satisfy $g \leqslant 0$ a.e., and every step function
+    $h \geqslant f$ must satisfy $h \geqslant 1$ a.e. Hence,
+    $\int g \,\mathrm{d}x \leqslant 0$ and
+    $\int h \,\mathrm{d}x \geqslant 1$ and taking
+    $\varepsilon=\frac{1}{3}$ we see that there is no number $L$ such
+    that
+    $L - \varepsilon < \int g \,\mathrm{d}x \leqslant\int h \,\mathrm{d}x < L + \varepsilon$.
+
+[^9]: Note that this is false without assuming that $\mu$ is
+    $\sigma$-finite: taking $\Omega=\{1\}$ and $\mu(\{1\})=\infty$, any
+    positive $f$ will yield $\nu=\mu$.
+
+[^10]: $f_X(x)=x^{-1}\dsone_{[1,e]}(x)$
+
+[^11]: Expanded from [@Cohn13 5.1.5].
+
+[^12]: Based on [@Cohn13 5.2.1].
+
+[^13]: Based on [@Cohn13 5.2.2].
+
+[^14]: Based on [@Cohn13 5.3.1].
+
+[^15]: Expanded from [@Cohn13 5.3.2].
+
+[^16]: Expanded from [@Cohn13 5.3.2].
+
+[^17]: A more laborious approach without using product measures would be
+    to start from the non-negative case, take independent simple
+    approximations, expand the expression for integral, use MCT, and
+    finally bootstrap to the integrable case.
+
+[^18]: This is defined in the same way the smallest $\sigma$-algebra
+    that contains a given class.
+
+[^19]: Based on [almostsuremath.com](https://almostsuremath.com/2019/10/06/the-monotone-class-theorem/)
+
+[^20]: Adapted from [@Kub15 Proposition 8.3].
+
+[^21]: Adapted from [@Kub15 Theorem 8.4].
+
+[^22]: Adapted from [@Dem20 Lemma 1.1.31].
+
+[^23]: Adapted from Wikipedia.
+
+[^24]: Adapted from Wikipedia.
+
+[^25]: Based on [@Cohn13 5.1.2].
+
+[^26]: Expanded from [@Cohn13 5.1.3].
+
+[^27]: Expanded from [@Cohn13 5.1.4].

@@ -496,9 +496,3 @@ author and the year in brackets, e.g.:
 
 - See @Cohn13 for more details
 - See [@Cohn13] for more details
-
-
-[^1]: See <https://youtu.be/s86-Z-CbaHA> for a nice overview of the
-    proof.
-
-[^2]: See [@Cohn13 1.4.9] for a complete proof.
