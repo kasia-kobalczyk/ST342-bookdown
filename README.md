@@ -38,4 +38,5 @@ After rendering the book all outputs and are stored in the `_book` folder.
 - In custom `div` block environments markdown lists (unnumbered and numbered) are not generated in the PDF output is the list is the last element of the environment. If the list is followed by a regular text, then it is generated properly. To omit this issue numbers of the list are put in mathinline style using the `$` symbols
 - The `xymatrix` pacakge cannot be used for the HTML output, it is not supported by MathJax. Any diagram using `xymatrix` is therefore not rendered in the HTML otput and the message directing to the PDF version of the notes is displayed.
 - Mathematical symbols cannot be used inside theorem (and proof, definition etc.) names. Solution: write the name of a theorem in bold separately.
+- remark, proofs and solutions cannot be numbered and referenced in HTML. Solution: avoid referencing remarks, proofs, solutions
 
