@@ -1083,10 +1083,10 @@ The above construction shows that, for every non-negative extended Borel
 function $f$, there exists a sequence of simple functions $(f_n)_n$ such
 that $0 \leqslant f_n \uparrow f$.
 
-Combining the previous remark with the Monotone Convergence Theorem and
-Remark [\[rmk:intsimpleunique\]](#rmk:intsimpleunique){reference-type="ref"
-reference="rmk:intsimpleunique"}, we see that any other definition of
-integral of non-negative extended Borel functions that is unitary,
+
+Combining the previous remark with the Monotone Convergence Theorem and 
+uniqueness of the integral of simple functions, we see that any other definition 
+of integral of non-negative extended Borel functions that is unitary,
 monotone, linear and $\sigma$-additive, would be equivalent to this one.
 In other words, the integral is unique.
 
