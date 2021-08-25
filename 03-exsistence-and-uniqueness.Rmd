@@ -32,7 +32,8 @@ Theorem \@ref(thm:lebesgue) is a particular case of the above theorem. For
 that, we take $\mathcal{C}= \{(a,b]:a,b \in \mathbb{R}\}$, since
 $\sigma(\mathcal{C})=\mathcal{B}(\mathbb{R})$ and note that
 $(-n,n]\uparrow  \mathbb{R}$ are in $\mathcal{C}$ and have finite
-measure.[^3]
+measure.^[Note that $(a,b\rbrack = \emptyset$ when $b\leqslant a$, so 
+$\emptyset\in\mathcal{C}$ and $\mathcal{C}$ is closed under intersections.]
 
 Before introducing the concepts used in its proof, let us discuss where
 they arise from. Suppose we want to check that two *finite* measures
@@ -136,7 +137,7 @@ So, for each $n$, the measures $\mu_n$ and $\nu_n$ are in the previous
 case, and, for every $A \in \sigma(\mathcal{C})$, we have
 $\mu_n(A)=\nu_n(A)$. Using continuity from below,
 $$\mu(A) = \lim_n \mu(A\cap A_n) = \lim_n \mu_n(A) = \lim_n \nu_n(A) = \lim_n \mu(A\cap A_n)=\nu_n(A)
-,$$ which concludes the proof.[^4]
+,$$ which concludes the proof.^[Expanded from [@Cohn13 1.6.4]]
 :::
 
 Another useful application of the $\pi$-$\lambda$ Theorem is to study
@@ -183,7 +184,8 @@ events. For instance, this random number being a multiple of $5$ and a
 multiple of $6$ would be independent, whereas a year being multiple of
 $5$ and leap would not. This "frequentist" notion would be
 $$\mu(A) = \lim_{n \to \infty} \frac{\#(A \cap [1,n])}{n}
-,$$ and that this $\mu$ can be extended[^5] to a finitely additive
+,$$ and that this $\mu$ can be extended ^[This requires the Hahn-Banach Theorem 
+which is a topic of Functional Analysis.] to a finitely additive
 measure defined on all $\mathcal{P}(\mathbb{N})$, including sets $A$ for
 which the limit does not exist. However, taking
 $A_n = \{n,n+1,n+2,\dots\}$, we have $\mu(A_n) = 1$ for every $n$ in

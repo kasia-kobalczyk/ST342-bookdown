@@ -7,8 +7,8 @@ to the associated curve. However this procedure is not the most suitable
 to analyse sequences of functions when taking limits. In contrast, the
 Lebesgue Integral considers horizontal shapes, which makes it more
 flexible. It is also more descriptive as to when it is possible to take
-limits. As an example, suppose we want to show that[^6] $$\nonumber
-\lim_{n\to\infty} \int_{0}^\infty \frac{e^{-nx^2}}{\sqrt{x}} \,\mathrm{d}x
+limits. As an example, suppose we want to show that ^[Example from [@Bart95].]
+$$\nonumber \lim_{n\to\infty} \int_{0}^\infty \frac{e^{-nx^2}}{\sqrt{x}} \,\mathrm{d}x
 =
 0$$ or $$\nonumber
 \frac{\mathrm{d}}{\mathrm{d}t}
@@ -488,7 +488,7 @@ f(x) \geqslant f(x_0) + c (x - x_0), \ \forall x \in I
 .$$ Choosing $x = X$ and $x_0 = \mathbb{E}X$, we get $$\nonumber
 f(X) \geqslant f(\mathbb{E}X) + c \cdot (X - \mathbb{E}X), \ \text{a.s.},$$
 and taking expectations on both sides we get the stated
-inequality.[^7]
+inequality.^[Based on [@Shir16 §2.6.7].]
 :::
 
 
@@ -663,7 +663,17 @@ integrable even if it is continuous at almost every point.
 Another popular example is $f:[0,1]\to\mathbb{R}$ given by
 $f = \dsone_\mathbb{Q}$. Since $m(\mathbb{Q})=0$, we have
 $\int_{[0,1]} f \,\mathrm{d}x = 0$ but this function is not Riemann
-integrable.[^8]
+integrable.^[Let us prove that it is not Riemann integrable. Consider any
+partition of $[0,1]$ into finitely many non-degenerate intervals,
+and notice that all intervals will contain both rational and
+irrational numbers. Thus, every step function $g \leqslant f$ must
+satisfy $g \leqslant 0$ a.e., and every step function
+$h \geqslant f$ must satisfy $h \geqslant 1$ a.e. Hence,
+$\int g \,\mathrm{d}x \leqslant 0$ and
+$\int h \,\mathrm{d}x \geqslant 1$ and taking
+$\varepsilon=\frac{1}{3}$ we see that there is no number $L$ such
+that
+$L - \varepsilon < \int g \,\mathrm{d}x \leqslant\int h \,\mathrm{d}x < L + \varepsilon$.]
 
 :::{.remark}
 The reader may wonder what happens if $f$ is Riemann integrable but not

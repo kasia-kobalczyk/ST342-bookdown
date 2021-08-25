@@ -166,7 +166,8 @@ The next example shows that there is no measure $m$ defined on all
 subsets of $\R^3$ which satisfies these three properties.
 
 ::: {.example #banachtarski name="Banach-Tarski paradox"}
-Consider the ball $$B = \{x \in \R^3 : \|x\| \leq 1 \} .$$ There exist[^1]
+Consider the ball $$B = \{x \in \R^3 : \|x\| \leq 1 \} .$$ There exist ^[See 
+https://youtu.be/s86-Z-CbaHA for a nice overview of the proof]
 $k\in\N$, *disjoint* sets $A_1,\dots,A_{2k}$, and *isometries* (maps
 that preserve distances and angles) $S_1,\dots,S_{2k}:\R^3\to\R^3$ such
 that
@@ -218,7 +219,7 @@ $x \in \SSS^1 \setminus (\cup_n E_n)$. Adding such point does not break
 the first property (proof omitted), and may help the second one. Keep
 adding points this way, until it is no longer possible. When it is no
 longer possible, it can only be so because the second property is also
-satisfied.[^2]
+satisfied.^[See [@Cohn13 1.4.9] for a complete proof.]
 :::
 
 ::: {.remark}
