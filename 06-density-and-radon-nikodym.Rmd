@@ -330,7 +330,7 @@ $$\nu(A) = \int_A f \,\mathrm{d}\mu, \ \forall A \in \mathcal{F}.$$
 :::
 
 ::: {.proof}
-Given on page.
+Given in appendix\ [Postponed proofs].
 :::
 
 We say that a random variable $X$ is *absolutely continuous* if its
