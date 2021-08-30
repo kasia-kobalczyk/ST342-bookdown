@@ -1,0 +1,481 @@
+# Density and Radon-Nikodým Theorem {#sec:radnik}
+
+There are many situations where we want to define or study a measure in
+terms of another. Some of the most common uses is to tilt a probability
+measure and obtain a new one, to get probability distributions on
+$\mathbb{R}$ by specifying some density, and to define conditional
+expectations.
+
+We explore these three cases, while keeping in mind that these are
+rather general concepts and tools. In particular,
+Proposition\ \@ref(prp:contexp) we prove the good old formula for the
+expectation of an absolutely continuous random variable.
+
+## Density of measures and continuous variables {#sub:density}
+
+In this section we explore the concept of density and how it applies to
+absolutely continuous random variables.
+
+### Measures defined by a density
+
+Given a measure space and a non-negative extended Borel function, it is
+possible to construct a new measure via the Lebesgue integral.
+
+::: {.proposition #intmeasure}
+Let $(\Omega,\mathcal{F},\mu)$ be a measure space
+and $f$ a non-negative extended Borel function. Then,
+$$\nu(A) := \int_A f \,\mathrm{d}\mu= \int_{\Omega} f \dsone_{A} \,\mathrm{d}\mu, \ \forall A \in \mathcal{F},$$
+defines a measure on $(\Omega,\mathcal{F})$.
+:::
+
+:::{.exercise}
+Prove the above proposition.
+:::
+
+:::{.example #exp}
+Consider the measure space
+$(\mathbb{R},\mathcal{B},m)$ and the non-negative Borel function
+$g(x) = \lambda e^{-\lambda x}\dsone_{[0,\infty)}(x)$ for
+$x \in \mathbb{R}$, where $\lambda > 0$. Then,
+$$\mathbb{P}_{\lambda}(B) := \int_B g \,\mathrm{d}m  = \int_{\mathbb{R}} g\dsone_B \,\mathrm{d}m, \ \forall B \in \mathcal{B},$$
+defines a measure on $(\mathbb{R},\mathcal{B})$, by
+Proposition\ \@ref(prp:intmeasure). In fact, $\mathbb{P}_{\lambda}$ is a
+probability measure, since
+$$\mathbb{P}_{\lambda}(\mathbb{R}) = \int_{\mathbb{R}}  \lambda e^{-\lambda x}\dsone_{[0,\infty)}(x) \,\mathrm{d}x = \int_0^{\infty} \lambda e^{-\lambda x} \,\mathrm{d}x = 1.$$
+:::
+
+A probability mass function assigns mass to elements of a discrete set,
+which can be seen as changing the weights assigned by the counting
+measure. In the above example we changed the weights assigned by the
+Lebesgue measure instead.
+
+:::{.definition #radon name="Radon-Nikodým derivative"} 
+Let $(\Omega,\mathcal{F},\mu)$ be a measure space and
+$f:\Omega\to [0,+\infty]$ a non-negative extended Borel function. If
+$\nu$ is a measure on $(\Omega,\mathcal{F})$ such that
+\begin{equation}
+(\#eq:radon)
+\nu(A) := \int_A f \,\mathrm{d}\mu, \quad \forall A \in \mathcal{F},
+\end{equation}
+we say that $f$ is *the Radon-Nikodým derivative* (or *density*) *of
+$\nu$ with respect to $\mu$*, and we write
+$f = \frac{\mathrm{d}\nu}{\mathrm{d}\mu}$.
+:::
+
+:::{.remark}
+Given two measures $\mu,\nu$ on $(\Omega,\mathcal{F})$, we say that
+$\frac{\mathrm{d}\nu}{\mathrm{d}\mu}$ *exists* if there is a
+non-negative extended Borel function $f$ such
+that \@ref(eq:radon) holds.
+:::
+
+:::{.remark} 
+We say *the* Radon-Nikodým derivative because it is unique, in the following
+sense. Given a measure $\nu$, a $\sigma$-finite measure $\mu$, and two
+extended Borel functions $f$ and $g$ such
+that \@ref(eq:radon) holds, then $f = g$ for $\mu$-a.e. $\omega$.
+:::
+
+::: {.proof}
+Take $B_{n}\uparrow\Omega$ such that $\mu(B_n)<\infty$ for every $n$. Define
+$A_{n}:=\{\omega\in B_{n}:g(\omega)\leqslant n,g(\omega)<f(\omega)\}$.
+Since $\mu(A_{n})\leqslant\mu(B_{n})<\infty$, we have that
+$g\dsone_{A_{n}}$ is finite and integrable. So
+$\int_{A_{n}}(f-g)\mathrm{d}\mu=\int_{A_{n}}f\mathrm{d}\mu-\int_{A_{n}}g\mathrm{d}\mu=0$,
+since the second integral is finite and both are equal by assumption. By
+Exercise\ \@ref(exr:zeroae), $\mu(A_{n})=0.$ On the other hand, by
+Proposition\ \@ref(prp:measureproperty) (ii), $\mu(g<f)=\lim_{n}\mu(A_{n})=0$.
+Analogous argument shows that $\mu(f<g)=0$, concluding the proof. ^[Note that `
+this is false without assuming that $\mu$ is $\sigma$-finite: taking $\Omega=\{1\}$ and $\mu(\{1\})=\infty$, any positive $f$ will yield $\nu=\mu$.]
+:::
+
+:::{.remark}
+Given a measure $\mu$ and a non-negative extended Borel function $f$, by
+Proposition\ \@ref(prp:intmeasure) we can define a unique $\nu$ such that
+$\frac{\mathrm{d}\nu}{\mathrm{d}\mu} = f$ for $\mu$-a.e. $\omega$.
+:::
+
+:::{.example #sizedie}
+Let $\Omega=\{1,2,3,4,5,6\}$, $\mathcal{F}=\mathcal{P}(\Omega)$ and
+$\mathbb{P}(A)=\frac{\#A}{6}$. Take the function $g(n) = \frac{2}{7}n$.
+Then by
+Proposition\ \@ref(prp:intmeasure) the function $\mathbf{P}$ given by
+$\mathbf{P}(A) = \int_\Omega (g \dsone_A)\mathrm{d}\mathbb{P}$
+defines another measure on $(\Omega,\mathcal{F})$.
+:::
+
+:::{.example}
+Show that the above $\mathbf{P}$ is a probability measure.
+:::
+
+::: {.proposition #radonchain name="Chain rule of the Radon-Nikodým derivative"} 
+Let $\nu,\mu$ be measures on a given measurable space $(\Omega,\mathcal{F})$
+such that $\frac{\mathrm{d}\nu}{\mathrm{d}\mu}$ exists, and let
+$g:\Omega\to [0,+\infty]$ be a non-negative extended Borel function.
+Then,
+$$\int_\Omega g \,\mathrm{d}\nu = \int_\Omega g \tfrac{\mathrm{d}\nu}{\mathrm{d}\mu} \,\mathrm{d}\mu.$$
+:::
+
+
+::: {.proof}
+First, suppose that $g = \dsone_A$ for some $A \in \mathcal{F}$. In this case, we have
+$$\int_\Omega \dsone_{A} \,\mathrm{d}\nu = \nu(A) = \int_{A} \tfrac{\mathrm{d}\nu}{\mathrm{d}\mu} \,\mathrm{d}\mu = \int_{\Omega} \dsone_{A}\tfrac{\mathrm{d}\nu}{\mathrm{d}\mu} \,\mathrm{d}\mu$$
+as claimed. By linearity, it also holds when $g$ is a non-negative
+simple function. By \@ref(eq:mctbis), it holds for any non-negative extended Borel
+function $g$.
+:::
+
+### Absolutely continuous random variables
+
+We now give the proper definition of a very familiar object.
+
+::: {.definition name="Absolutely continuous variables"}
+Given a random variable $X$ on a probability space $(\Omega,\mathcal{F},\mathbb{P})$,
+we say that $X$ is an *absolutely continuous random variable* if
+$\frac{\mathrm{d}\mathbb{P}_X}{\mathrm{d}x}$ exists, where $\mathrm{d}x$
+denotes the Lebesgue measure on $(\mathbb{R},\mathcal{B})$. The
+Radon-Nikodým derivative $\frac{\mathrm{d}\mathbb{P}_X}{\mathrm{d}x}$ is
+called the *probability density function* of $X$ and usually denoted
+$f_X:\mathbb{R}\to\mathbb{R}$. Note that $f_X$ is determined by $X$ and
+$\mathbb{P}$ but the latter is omitted in the notation.
+:::
+
+The probability measure of Example\ \@ref(exm:exp) is known 
+*the Exponential distribution with parameter $\lambda$*, and $g$ is called 
+*the density* of this distribution.
+
+:::{.example}
+The unique probability measure $\mathbb{P}$ on
+$(\mathbb{R},\mathcal{B})$ such that
+$$\tfrac{\mathrm{d}\mathbb{P}_X}{\mathrm{d}x}(x) = \frac{e^{-x^2/2}}{\sqrt{2\pi}}$$
+is called *the standard normal distribution on $\mathbb{R}$*.
+:::
+
+:::{.example}
+The unique probability measure $\mathbb{P}$ on
+$(\mathbb{R},\mathcal{B})$ such that
+$$\tfrac{\mathrm{d}\mathbb{P}_X}{\mathrm{d}x}(x) = \dsone_{[0,1]}(x)$$
+is called *the uniform distribution on $[0,1]$*.
+:::
+
+:::{.remark}
+The density of an absolutely continuous random variable is unique up to
+almost-everywhere equality. For instance, $\dsone_{(0,1)}(x)$ is
+also the density of the uniform distribution, as it differs from
+$\dsone_{[0,1]}(x)$ on a set of zero Lebesgue measure.
+:::
+
+
+::: {.proposition #contexp name="Expectation"}
+If $X$ is an absolutely continuous random variable, then, for every 
+non-negative extended Borel function
+$g$, we have $$\mathbb{E}g(X) = \int_\mathbb{R}g(x) f_X(x) \,\mathrm{d}x
+.$$
+:::
+
+::: {.proof}
+First, notice that
+Theorem\ \@ref(thm:change) gives
+$$\mathbb{E}g(X) = \int_\Omega g(X(\omega)) \,\mathbb{P}(\mathrm{d}\omega) = \int_\mathbb{R}g(x) \,\mathbb{P}_X(\mathrm{d}x)
+=
+\int_\mathbb{R}g \,\mathrm{d}\mathbb{P}_X$$ Now, since $X$ is absolutely
+continuous, we can apply
+Proposition\ \@ref(prp:radonchain) to get $$%\int_\R g(x) \,\Pb_X(\dd x)
+\int_\mathbb{R}g \,\mathrm{d}\mathbb{P}_X
+= \int_\mathbb{R}g \tfrac{\mathrm{d}\mathbb{P}_X}{\mathrm{d}x} \,\mathrm{d}x = \int_\mathbb{R}g(x) f_X(x) \,\mathrm{d}x,$$
+which concludes the proof.
+:::
+
+:::{.example}
+If $X \sim \mathrm{Exp}(\lambda)$, then
+$\mathbb{E}X = \frac{1}{\lambda}$. Indeed, the density of $\mathbb{P}_X$
+with respect to the Lebesgue measure is
+$\lambda e^{-\lambda x} \dsone_{[0,\infty)}(x)$. By the above
+proposition, we have
+$\mathbb{E}X = \int_\mathbb{R}x \lambda e^{-\lambda x} \dsone_{[0,\infty)}(x) \,\mathrm{d}x = \cdots = \frac{1}{\lambda}$.
+:::
+
+### Tilting a distribution
+
+Below we see how to change the distribution of a random variable without
+changing the variable itself.
+
+:::{.example}
+Let $(\Omega,\mathcal{F},\mathbb{P})$ be a probability space and
+$X \sim \mathcal{N}(0,1)$, i.e. $X$ is a standard Normal random variable
+with probability distribution, that is,
+$$\mathbb{P}[X \in A] = \int_A \frac{1}{\sqrt{2\pi}} e^{-\frac{x^2}{2}} \,\mathrm{d}x, \ \forall A \in \mathcal{B}({\mathbb{R}}).$$
+Fix some $\theta\in\mathbb{R}$. We want to define another measure
+$\mathbf{P}$ on $(\Omega,\mathcal{F})$, such that
+$$X \sim \mathcal{N}(\theta,1), \ \text{under} \ \mathbf{P}.$$ Take
+$\frac{\mathrm{d}\mathbf{P}}{\mathrm{d}\mathbb{P}}(\omega) = \frac{e^{\theta X(\omega)}}{e^{\frac{\theta^2}{2}}}$
+and by
+Proposition\ \@ref(prp:radonchain) we get $$\begin{aligned}
+\mathbf{E}[e^{t(X-\theta)}] &= \mathbb{E}[e^{t(X-\theta)}e^{\theta X - \frac{\theta^2}{2}}] \\
+&= e^{-\theta t - \frac{\theta^2}{2}} \mathbb{E}[e^{(t+\theta)X}]\\
+&= e^{-\theta t - \frac{\theta^2}{2}} e^{\frac{(t+\theta)^2}{2}} = e^{\frac{t^2}{2}}, \ t \in \mathbb{R}.\end{aligned}$$
+First, taking $t=0$ we see that
+$\mathbf{P}(\Omega)=\mathbf{E}[1]=\mathbf{E}[e^0]=1$, so $\mathbf{P}$ is
+a indeed a probability measure. Also, by uniqueness of moment generating
+functions, $X - \theta \sim \mathcal{N}(0,1)$ under $\mathbf{P}$.
+:::
+
+:::{.remark}
+The fact that $\mathbf{P}$ is
+a probability measure comes from our careful choice of Radon-Nikodým
+derivative where the denominator equals the $\mathbb{P}$-expectation of
+the numerator. In general, if $g$ is a non-negative extended Borel
+function and $\mathbb{E}g(X) < \infty$, then we can define
+$\frac{\mathrm{d}\mathbf{P}}{\mathrm{d}\mathbb{P}} = \frac{g(X)}{\mathbb{E}g(X)}$,
+and the distribution of $X$ under $\mathbf{P}$ equals the distribution
+of $X$ under $\mathbb{P}$ *biased* by the function $g$. The resulting
+measure is a probability measure because, taking $A=\Omega$ and $f=g(X)$
+in \@ref(eq:radon) will give $$\nonumber
+\mathbf{P}(\Omega) = \int_\Omega f \,\mathrm{d}\mathbb{P}= \frac{1}{\mathbb{E}g(X)} \int_\Omega g(X)\mathrm{d}\mathbb{P}= 1.
+\qedhere$$
+:::
+
+:::{.example name="Size-biasing"}
+Let $(\Omega,\mathcal{F},\mathbb{P})$ be a probability space. Suppose
+$X \sim \mathrm{Poisson}(\mu)$. Defining
+$\frac{\mathrm{d}\mathbf{P}}{\mathrm{d}\mathbb{P}} = \frac{X}{\mu}$, the
+measure $\mathbf{P}$ is a probability measure and the distribution of
+$X-1$ under $\mathbf{P}$ is Poisson with the same parameter.
+:::
+
+:::{.example name="Size-biasing"}
+Let $(\Omega,\mathcal{F},\mathbb{P})$ be a probability space. Suppose
+$Y \sim \mathrm{Exp}(\lambda)$. Defining
+$\frac{\mathrm{d}{\mathbf{P}}}{\mathrm{d}\mathbb{P}} = \lambda Y$, the
+measure $\mathbf{P}$ is a probability measure and the distribution of
+$Y$ under $\mathbf{P}$ is $\Gamma(2,\lambda)$.
+:::
+
+:::{.example name="Size-biasing"}
+In Example\ \@ref(exm:sizedie), we have the experiment of rolling a die, where
+$\mathbb{P}$ corresponds to sampling one of the six faces with equal
+probability. The measure $\mathbf{P}$ corresponds to sampling one of the
+21 dots with equal probability, and observing the number of dots in its
+face.
+:::
+
+## The Radon-Nikodým Theorem {#sub:radon}
+
+In this section we study when a measure $\nu$ can be expressed in terms
+of another measure $\mu$, deformed by a variable factor
+$\frac{\mathrm{d}\nu}{\mathrm{d}\mu}$ that we call Radon-Nikodým
+derivative.
+
+### Absolute continuity and the Radon-Nikodým Theorem
+
+The following is a useful property for comparing measures.
+
+::: {.definition #abscont name="Absolute continuity between measures"}
+Let $\nu,\mu$ be measures on a given measurable space $(\Omega,\mathcal{F})$. We say
+that *$\nu$ is absolutely continuous with respect to $\mu$* if, for all
+$A \in \mathcal{F}$ $$\mu(A) = 0 \implies \nu(A) = 0.$$ We denote this
+relation by $\nu \ll \mu$.
+:::
+
+:::{.example #radonnatural}
+Consider the measurable space $(\mathbb{N},\mathcal{P}(\mathbb{N}))$, and recall
+the Dirac measure $\delta_k$ at a point $k \in \mathbb{N}$, defined in
+Example\ \@rerf(exm:dirac). Denote by $\mu_C$ the counting measure on
+$\mathbb{N}$, as defined in
+Example\ \@ref(exm:counting). If a set $A \subseteq \mathbb{Z}$ has $\mu_C$
+measure $0$, then it has to have $\delta_k$ measure $0$. Hence,
+$\delta_k$ is absolutely continuous with respect to $\mu_C$,
+i.e. $\delta_k \ll \mu_C$.
+:::
+
+:::{.example}
+In the above example, can you think of a function
+$f:\mathbb{N}\to[0,\infty]$ that would be the Radon-Nikodým derivative
+$\frac{\mathrm{d}\delta_k}{\mathrm{d}\mu_C}$ of $\delta_k$ with respect
+to $\mu_C$?
+:::
+
+:::{.example #radonreal}
+Let $\mu_C$ be the counting measure on $(\mathbb{R},\mathcal{B})$, so that:
+
+-   If $\mu_C(A) = \infty$, then $A$ is an infinite Borel set.
+
+-   If $\mu_C(A) = N < \infty$, then $A = \{a_1,...,a_N\}$ for some
+    $a_1,...,a_N \in \mathbb{R}$.
+
+-   If $\mu_C(A) = 0$, then $A = \emptyset$.
+
+From the above cases, if $\mu_C(A)=0$, then $m(A)=0$, where $m$ denotes
+the Lebesgue measure. Therefore, $m \ll \mu_C$.
+:::
+
+:::{.exercise}
+In the above example, show that the converse is not true, that is,
+$\mu_C$ is not absolutely continuous with respect to $m$.
+:::
+
+Let $\mu$ and $\nu$ be measures on $(\Omega,\mathcal{F})$ and suppose
+the Radon-Nikodým derivative $f$ of $\nu$ with respect to $\mu$ exists,
+that is, $\nu(A) = \int_A f \,\mathrm{d}\mu$ for ever $A\in\mathcal{F}$.
+By Exercise\ \@ref(exr:aezero) we have $\nu \ll \mu$. We wonder whether the
+converse implication holds, that is, if $\nu \ll \mu$, does
+$\frac{\mathrm{d}\nu}{\mathrm{d}\mu}$ exist?
+
+::: {.theorem #radonnikodym name="The Radon-Nikodým Theorem"}
+Let $\nu$ and $\mu$ be
+$\sigma$-finite measures on a given measurable space
+$(\Omega,\mathcal{F})$. Then, $\nu\ll\mu$ if and only if there exists a
+non-negative extended Borel function $f$, such that
+$$\nu(A) = \int_A f \,\mathrm{d}\mu, \ \forall A \in \mathcal{F}.$$
+:::
+
+::: {.proof}
+Given on page.
+:::
+
+We say that a random variable $X$ is *absolutely continuous* if its
+distribution $\mathbb{P}_X$ assigns measure zero to Borel sets of
+Lebesgue measure zero, that is $\mathbb{P}_X \ll m$. From the above
+theorem, we see that any absolutely continuous random variable $X$ must
+have a density!
+
+### Continuous random variables and densities
+
+We say that a random variable $X$ is *continuous* if its distribution
+assigns measure zero to every fixed number $x \in \mathbb{R}$. Since
+finite sets have Lebesgue measure zero, every absolutely continuous
+variable is also continuous (showing that the adverb "absolutely" has
+been used properly, unlike outer measures and finitely additive measures
+which are not measures).
+
+One may wonder about what could be a random variable which is continuous
+but not absolutely continuous: in fact it is possible to construct such
+variables, and their distributions assign positive probability to a set
+which is uncountable but has zero Lebesgue measure.
+
+If we are given a non-negative function $f$ and we can check that
+$$\mathbb{P}_X\big( (-\infty,x] \big) = \int_{-\infty}^x f(s)\,\mathrm{d}s$$
+for all $x \in \mathbb{R}$, then we can conclude that $X$ is absolutely
+continuous and has density $f$. Indeed, the measure
+$\mathbf{P}(B) = \int_B f \,\mathrm{d}x$ coincides with $\mathbb{P}_X$
+on the $\pi$-system $\{(-\infty,x]\}_{x\in\mathbb{R}}$ which generates
+$\mathcal{B}$, and the claim follows from the $\pi$-$\lambda$ Theorem.
+
+The converse is more delicate, and there is a theory that decomposes
+$\mathbb{P}_X$ into absolutely continuous and singularly continuous
+parts. We will bypass the theory by taking a more modest approach that
+is very useful in practice.
+
+Suppose we are given a distribution function $F$ and want to test if it
+is absolutely continuous. We take $f$ to be its almost-everywhere
+derivative, and check whether
+$$F(x) = \int_{-\infty}^x f(s)\,\mathrm{d}s$$ for every
+$x \in \mathbb{R}$. If this is the case, we can conclude that $f$ is the
+density of $F$ with respect to the Lebesgue measure.
+
+Suppose $U$ has the uniform distribution on $[0,1]$ and we take $X=e^U$.
+Find the density of $X$. (answer in footnote ^[$f_X(x)=x^{-1}\dsone_{[1,e]}(x)$])
+
+### Conditional expectation
+
+The Radon-Nikodým Theorem is a fundamental theorem in Measure Theory and
+Probability Theory. We now show one of the its many non-trivial
+applications.
+
+::: {.definition #condexp name="Conditional expectation"}
+Suppose $(\Omega,\mathcal{F},\mathbb{P})$ is a probability space, $X$ is an
+extended random variable, and $\mathcal{G}\subseteq \mathcal{F}$ is
+another $\sigma$-algebra. We say that an extended random variable $Z$ is
+the *conditional expectation of $X$ given $\mathcal{G}$* if
+\begin{equation}
+(\#eq:condexp1)
+Z:\Omega\to\overline{\mathbb{R}} \ \text{is} \ \mathcal{G}\text{-measurable}
+\end{equation}
+and 
+\begin{equation}
+(\#eq:condexp2)
+\int_A Z \,\mathrm{d}\mathbb{P}= \int_A X \,\mathrm{d}\mathbb{P}
+\quad
+\text{ for all } A \in \mathcal{G}.
+\end{equation}
+The above identity means whenever one of the integrals is defined,
+the other one is also defined and they coincide.
+:::
+
+:::{.exercise}
+Suppose that two extended random variables $Z$ and $W$
+satisfy \@ref(eq:condexp1)
+and \@ref(eq:condexp2). Prove that $\mathbb{P}(Z=W)=1$.
+:::
+
+:::{.remark}
+The above definition says *the* conditional expectation because, if
+there is such a function, it is unique in the a.s. sense. Conversely, if
+$Z$ satisfies \@ref(eq:condexp2) and $W = Z$ a.s., then $W$ also
+satisfies \@ref(eq:condexp2).
+:::
+
+::: {.theorem}
+In the setup of Definition\ \@ref(def:condexp), if $X$ is a.s. finite and $\mathbb{E}X$ is
+defined, then the conditional expectation of $X$ given $\mathcal{G}$ is
+defined.
+:::
+
+::: {.proof name="non-negative integrable case"}
+Suppose that $X$ is integrable, and define the measure $\nu$ on $(\Omega,\mathcal{G})$ by
+$$\nu(A) = \int_A X \,\mathrm{d}\mathbb{P}$$ for $A \in \mathcal{G}$.
+Then $\nu(\Omega) = \mathbb{E}X < \infty$, so $\nu$ is $\sigma$-finite.
+By the Radon-Nikodým Theorem,
+$\frac{\mathrm{d}\nu}{\mathrm{d}\mathbb{P}}$ exists as a non-negative
+extended Borel function on $(\Omega,\mathcal{G})$. Define
+$Z := \frac{\mathrm{d}\nu}{\mathrm{d}\mathbb{P}}$ and note that it
+satisfies both \@ref(eq:condexp1)
+and \@ref(eq:condexp2).
+:::
+
+::: {.proof name="non-negative case"}
+ow suppose that $X$ is a non-negative
+finite random variable, not necessarily integrable. Then $X$ can be
+written as $X = \sum_n X_n$ where each $X_n$ is an integrable random
+variable. From the previous case, each $X_n$ has a conditional
+expectation, which we denote $Z_n$.
+
+We take $Z := \sum_n Z_n$. Note that $Z$ is also non-negative and
+$\mathcal{G}$-measurable. By the previous case and $\sigma$-additivity
+of the integral, for every $A\in\mathcal{G}$,
+$$\int_A Z \,\mathrm{d}\mathbb{P}
+=
+\sum_n
+\int_A Z_n \,\mathrm{d}\mathbb{P}
+=
+\sum_n
+\int_A X_n \,\mathrm{d}\mathbb{P}
+=
+\int_A X \,\mathrm{d}\mathbb{P}
+,$$ which concludes the proof.
+:::
+
+::: {.proof name="general case"}
+We can assume that $\mathbb{E}X^- < \infty$.
+From the previous case, there exist two $\mathcal{G}$-measurable
+functions $Z^\pm$ such that
+$\int_A Z^\pm \,\mathrm{d}\mathbb{P}= \int_A X^\pm \,\mathrm{d}\mathbb{P}$
+for all $A \in \mathcal{G}$. In particular,
+$\int_\Omega Z^- \,\mathrm{d}\mathbb{P}= \int_\Omega X^- \,\mathrm{d}\mathbb{P}< \infty$,
+so by $Z^-$ is a.s.finite, and we can assume that $Z^-(\omega)<\infty$
+for every $\omega\in\Omega$. Define $Z = Z^+ - Z^-$, which is
+well-defined because $Z^-$ is always finite. Then for all
+$A \in \mathcal{G}$, we have $$\nonumber
+\int_A Z \,\mathrm{d}\mathbb{P}
+=
+\int_A Z^+ \,\mathrm{d}\mathbb{P}
+-
+\int_A Z^- \,\mathrm{d}\mathbb{P}
+=
+\int_A X^+ \,\mathrm{d}\mathbb{P}
+-
+\int_A X^- \,\mathrm{d}\mathbb{P}
+=
+\int_A X \,\mathrm{d}\mathbb{P}$$ which are well-defined because $Z^-$
+and $X^-$ are integrable.
+:::

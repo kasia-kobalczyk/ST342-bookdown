@@ -4,12 +4,6 @@
 # References {-}
 '`
 
-[^9]: Note that this is false without assuming that $\mu$ is
-    $\sigma$-finite: taking $\Omega=\{1\}$ and $\mu(\{1\})=\infty$, any
-    positive $f$ will yield $\nu=\mu$.
-
-[^10]: $f_X(x)=x^{-1}\dsone_{[1,e]}(x)$
-
 [^11]: Expanded from [@Cohn13 5.1.5].
 
 [^12]: Based on [@Cohn13 5.2.1].
