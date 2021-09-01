@@ -5,7 +5,7 @@ date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
-classoption: oneside
+classoption: twoside
 bibliography: [references.bib]
 biblio-style: "abbrvnat"
 link-citations: yes
