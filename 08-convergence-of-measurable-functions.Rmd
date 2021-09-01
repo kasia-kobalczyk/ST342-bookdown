@@ -160,7 +160,7 @@ i.  Finally, we say that *$(X_n)_{n\geqslant 1}$ converges to $X$ in
     \lim_{n\to\infty}\mathbb{E}|X_n - X|^p = 0.$$ In this case, we write
     $X_n \xrightarrow{\mathcal{L}^p} X$.
 
-:::{.remark}
+:::{.proposition #convexp}
 For a probability space, if $X_n \xrightarrow{\mathcal{L}^p} X$, then
 $\mathbb{E}X_n \to \mathbb{E}X$.
 :::
@@ -834,10 +834,8 @@ If moreover $p=1$ or $\mu$ is a probability measure, then $$\nonumber
 :::
 
 ::: {.proof}
-Convergence of the integral follows from
-Remark [\[rmk:convexp\]](#rmk:convexp){reference-type="ref"
-reference="rmk:convexp"} if $\mu(\Omega)=1$, and from
-Exercise\ \@ref(exr:intnorm) if $p=1$, so we only need to prove that
+Convergence of the integral follows from Proposition\ \@ref(prp:convexp) if
+$\mu(\Omega)=1$, and from Exercise\ \@ref(exr:intnorm) if $p=1$, so we only need to prove that
 $f_n \to f$ in $\mathcal{L}^p$.
 
 Let us first suppose that $f_n \xrightarrow{\text{a.e.}} f$. By noticing
