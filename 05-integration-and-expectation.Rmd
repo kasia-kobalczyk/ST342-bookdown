@@ -348,9 +348,12 @@ $$\nonumber
 
 :::{.remark}
 In practice, we do not compute an expectation
-by \@ref(eq:defexp) but instead $$\label{eq:expcompute}
-\mathbb{E}X = \int_\mathbb{R}x \, \mathbb{P}_X(\mathrm{d}x),$$ which is
-a particular case of the above theorem with $f=X$ and $g(x)=x$.
+by \@ref(eq:defexp) but instead 
+\begin{equation}
+(\#eq:expcompute)
+\mathbb{E}X = \int_\mathbb{R}x \, \mathbb{P}_X(\mathrm{d}x),
+\end{equation}
+which is a particular case of the above theorem with $f=X$ and $g(x)=x$.
 :::
 
 :::{.remark}

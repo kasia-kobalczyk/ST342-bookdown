@@ -263,7 +263,7 @@ discussed above, this completes the proof.[^24]
 
 We finally give the postponed proofs from \@ref(sec:prodfubi).
 
-:::{.proof name="Proof of Example \@ref(exm:2dimborel)"}
+:::{.proof name="Proof of Example \@ref(exm:dimborel2)"}
 First, we show
 $\mathcal{B}(\mathbb{R}^2) \subseteq \mathcal{B}(\mathbb{R}) \otimes \mathcal{B}(\mathbb{R})$.
 Let

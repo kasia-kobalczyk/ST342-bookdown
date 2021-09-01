@@ -372,7 +372,7 @@ other words, $\dsone_A$ checks whether a point lies in $A$, whereas
 $\delta_x$ checks whether a set contains $x$.
 :::
 
-:::{.example #harmonic name="Counting measure"}
+:::{.example #counting name="Counting measure"}
 Let $\Omega$ be a set, $\mathcal{F}= \mathcal{P}(\Omega)$, and
 $$\mu = \sum_{x\in\Omega} \delta_x .$$ So
 $\mu(A) = \sum_{x\in\Omega}\delta_x(A)$ counts how many elements $A$
@@ -390,7 +390,7 @@ $(\Omega,\mathcal{F})$, and let $x_1,x_2,\dots\in[0,+\infty]$. Then
 $$\mu = \sum_n x_n \mu_n$$ is a measure on $(\Omega,\mathcal{F})$.
 :::
 
-:::{.exercise #restriction name="Coarsening"}
+:::{.exercise #coarsening name="Coarsening"}
 If $(\Omega,\mathcal{F},\mu)$ is a measure space, and
 $\mathcal{G}\subseteq \mathcal{F}$ is also a $\sigma$-algebra, then
 $(\Omega,\mathcal{G},\mu)$ is also a measure space.
@@ -411,19 +411,19 @@ measures.
 Let $(\Omega,\mathcal{F},\mu)$ be a measure space. Then, we have the
 following properties:
 
-1.  *Countable sub-additivity: If
+$1.$  Countable sub-additivity: If
     $\{A_i\}_{i=1}^{\infty} \subseteq \mathcal{F}$, then
-    $$\mu\big(\cup_{i=1}^{\infty}A_i\big) \leqslant\sum_{i=1}^{\infty}\mu(A_i).$$*
+    $$\mu\big(\cup_{i=1}^{\infty}A_i\big) \leqslant\sum_{i=1}^{\infty}\mu(A_i).$$
 
-2.  *Continuity from below: If
+$2.$  Continuity from below: If
     $\{A_i\}_{i=1}^{\infty} \subseteq \mathcal{F}, A_k \subseteq A_{k+1}, \forall k \in \mathbb{N}$,
     then\
-    $\mu(\bigcup_{i=1}^{\infty}A_i) := \mu(\lim\limits_{n \to \infty}A_n) = \lim\limits_{n \to \infty}\mu(A_n)$.*
+    $\mu(\bigcup_{i=1}^{\infty}A_i) := \mu(\lim\limits_{n \to \infty}A_n) = \lim\limits_{n \to \infty}\mu(A_n)$.
 
-3.  *Continuity from above: If
+$3.$  Continuity from above: If
     $\{A_i\}_{i=1}^{\infty} \subseteq \mathcal{F}, A_k \supseteq A_{k+1}, \forall k \in \mathbb{N}$,
     and $\mu(A_j) < \infty$ for some $j \in \mathbb{N}$, then
-    $\mu(\bigcap_{i=1}^{\infty}A_i) := \mu(\lim\limits_{n \to \infty}A_n) = \lim\limits_{n \to \infty}\mu(A_n)$.*
+    $\mu(\bigcap_{i=1}^{\infty}A_i) := \mu(\lim\limits_{n \to \infty}A_n) = \lim\limits_{n \to \infty}\mu(A_n)$.
 :::
 
 ::: {.proof}
