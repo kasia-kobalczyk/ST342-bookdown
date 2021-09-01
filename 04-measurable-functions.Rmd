@@ -26,16 +26,13 @@ $\mathcal{F}_2$ are clear from context, we often drop
 Let $(\Omega,\mathcal{F})$ be a measurable space and
 $A \in \mathcal{F}$. We show that the indicator function
 $\dsone_A : \Omega \to \{0,1\}$ given by
-:::
-
-\begin{center}
-$\dsone_A(\omega) =
+\[
+\dsone_A(\omega) =
 \begin{cases}
 1, & \omega \in A\\
 0, & \omega \notin A
-\end{cases}$
-\end{center}
-
+\end{cases}
+\]
 is $\mathcal{F}/\mathcal{P}(\{0,1\})$-measurable. Indeed, we have that
 
 -   $\dsone_{A}^{-1}(\emptyset) = \emptyset \in \mathcal{F}$,
@@ -47,6 +44,7 @@ is $\mathcal{F}/\mathcal{P}(\{0,1\})$-measurable. Indeed, we have that
 -   $\dsone_{A}^{-1}(\{0,1\}) = \dsone_A^{-1}(\{0\}) \cup \dsone_A^{-1}(\{1\}) = A^c \cup A = \Omega \in \mathcal{F}$,
 
 so $\dsone_A$ is indeed measurable.
+:::
 
 Naturally, one can expect from
 Definition\ \@ref(def:measurability) that a composition of measurable

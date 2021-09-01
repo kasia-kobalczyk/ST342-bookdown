@@ -421,10 +421,9 @@ $X_1,\dots,X_n$ defined on $(\Omega,\mathcal{F},\mathbb{P})$ by
 $$\mathbb{P}_{X_1,\dots,X_n}(A) := \mathbb{P}\big[ (X_1,\dots,X_n) \in A \big]
 ,\
 A \in \mathcal{B}(\mathbb{R}^n)
-.$$ From Remarks [\[rmk:indrvs\]](#rmk:indrvs){reference-type="ref"
-reference="rmk:indrvs"}
-and [\[rmk:prodlong\]](#rmk:prodlong){reference-type="ref"
-reference="rmk:prodlong"}, $X_1,\dots,X_n$ are independent if and only
+.$$
+From the above remark and the one following Definition\ \@ref(def:indevents),
+$X_1,\dots,X_n$ are independent if and only
 if their distribution satisfies
 \begin{equation}
 (\#eq:star)

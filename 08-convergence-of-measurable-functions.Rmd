@@ -308,7 +308,7 @@ amenable to study.
 
 ### Infinitely often and eventually
 
-::: {.definition name="Infinitely often and eventually"}
+::: {.definition #infoften name="Infinitely often and eventually"}
 Suppose $(\Omega,\mathcal{F})$ is a measurable space and $(A_n)_{n\geqslant 1}$
 is a sequence of events (i.e. measurable sets). We define the event
 "$A_n$ infinitely often," abbreviated "$A_n$\ i.o.," also denoted
@@ -439,9 +439,9 @@ $$\mathbb{P}\big( \limsup{}_{n} \, A_n \big) = 1.$$
 :::
 
 ::: {.proof}
-We look instead at $\{A_n \ \text{i.o.}\}^c$. By
-Remark [\[rmk:limcomplement\]](#rmk:limcomplement){reference-type="ref"
-reference="rmk:limcomplement"}, continuity from below and from above,
+We look instead at $\{A_n \ \text{i.o.}\}^c$.
+By the remark after Definition\ \@ref(def:infoften),
+continuity from below and from above,
 and independence of $(A_n^c)_{n \geqslant 1}$, we get $$\begin{aligned}
 \mathbb{P}(\{A_n \ \text{i.o.}\}^c) &= \mathbb{P}\left(\bigcup_{n=1}^{\infty}\bigcap_{m=n}^{\infty}A_m^c\right) \\
 &= \lim_{n\to\infty}\mathbb{P}\left(\bigcap_{m=n}^{\infty}A_m^c\right) \\
