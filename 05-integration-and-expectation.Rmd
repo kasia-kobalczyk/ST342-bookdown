@@ -455,8 +455,10 @@ $$\nonumber
 \mathbb{P}(|X| \geqslant\varepsilon) \leqslant\frac{1}{\varepsilon^\alpha}\mathbb{E} |X|^\alpha
 ,$$ which is sometimes referred to as *Markov's inequality*. We can, in
 turn, bound deviation from the mean using the variance of $X$ by,
-$$\label{eq:chebyshev}
-\mathbb{P}(|X - \mathbb{E} X| \geqslant\varepsilon) \leqslant\frac{1}{\varepsilon^2}\mathbb{V}X.$$
+\begin{equation}
+(\#eq:chebyshev)
+\mathbb{P}(|X - \mathbb{E} X| \geqslant\varepsilon) \leqslant\frac{1}{\varepsilon^2}\mathbb{V}X.
+\end{equation}
 This is sometimes also referred to as Chebyshev's inequality.
 :::
 
