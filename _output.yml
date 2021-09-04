@@ -3,11 +3,13 @@ bookdown::gitbook:
   config:
     toc:
       collapse: section
-      before: |
-        <li><a >ST342 Probability with Elementary Measure Theory</a></li>
+      before: ST342 Mathematics of Random Events
       after: |
-        <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+        <li><a href="https://moodle.warwick.ac.uk/enrol/index.php?id=45513" target="blank">Module Moodle</a></li>
     download: ["pdf"]
+    toolbar: null
+    edit: null
+    sharing: null
   split_by: chapter+number
   includes:
     in_header: mathjax_header.html
