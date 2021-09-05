@@ -201,15 +201,15 @@ suffices to hold for each such class on $\overline{\mathbb{R}}$.
 Let $(\Omega,\mathcal{F})$ be a measurable space and $f: \Omega \to \overline{\mathbb{R}}$. The
 following are equivalent:
 
-$1.$  $f$ is an extended Borel function,
+1.  $f$ is an extended Borel function,
 
-$2.$  $\{f < a\} \in \mathcal{F}, \ \forall a \in \mathbb{R}$,
+2.  $\{f < a\} \in \mathcal{F}, \ \forall a \in \mathbb{R}$,
 
-$3.$  $\{f \leqslant a\} \in \mathcal{F}, \ \forall a \in \mathbb{R}$,
+3.  $\{f \leqslant a\} \in \mathcal{F}, \ \forall a \in \mathbb{R}$,
 
-$4.$  $\{f > a\} \in \mathcal{F}, \ \forall a \in \mathbb{R}$,
+4.  $\{f > a\} \in \mathcal{F}, \ \forall a \in \mathbb{R}$,
 
-$5.$  $\{f \geqslant a\} \in \mathcal{F}, \ \forall a \in \mathbb{R}$.
+5.  $\{f \geqslant a\} \in \mathcal{F}, \ \forall a \in \mathbb{R}$.
 :::
 
 ::: {.proof}

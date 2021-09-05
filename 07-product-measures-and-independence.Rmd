@@ -58,11 +58,11 @@ Let $\Omega_1 \times \Omega_2$ be the Cartesian product of given sample spaces $
 a subset of $\Omega_1 \times \Omega_2$ and $f$ a function on
 $\Omega_1 \times \Omega_2$. Fix $x \in \Omega_1$ and $y \in \Omega_2$.
 
-$1.$ The *sections $E_x$ and $E^y$ of E* are the subsets of $\Omega_2$
+1. The *sections $E_x$ and $E^y$ of E* are the subsets of $\Omega_2$
     and $\Omega_1$, respectively, given by
     $$E_x = \{\tilde{y} \in \Omega_2: (x,\tilde{y}) \in E\} \quad \text{and} \quad E^y = \{\tilde{x} \in \Omega_1: (\tilde{x},y) \in E\}.$$
 
-$2.$ The *sections $f_x$ and $f^y$ of $f$* are the functions on
+2. The *sections $f_x$ and $f^y$ of $f$* are the functions on
     $\Omega_2$ and $\Omega_1$, respectively, given by
     $$f_x(\tilde{y}) = f(x,\tilde{y}) \quad \text{and} \quad f^y(\tilde{x}) = f(\tilde{x},y).$$
 :::
