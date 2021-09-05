@@ -1,6 +1,6 @@
-# ST342 - Mathematics of Random Events: Lecure Notes
+# ST-342 - Mathematics of Random Events: Lecure Notes
 
-Lecture notes for the ST342 Mathematics of Random Events module taught at the University of Warwick in the academic year of 2021/2022.
+Lecture notes for the ST-342 Mathematics of Random Events module taught at the University of Warwick in the academic year of 2021/2022.
 
 ## Top-level directory layout
 
@@ -29,13 +29,26 @@ ST342-bookdown/
 
 After rendering the book all outputs and are stored in the `_book` folder.
 
+## Software version
 
-## Issues and workarounds
-- In fenced `Div` blocks such as `:::{.proof}` compiled with book down `0.22` extra blank lines are insterted inside the corresponding latex environments. Correct output is produced when using book down `0.22.17`
-- `\mathds` is not supported by MathJax. For the double struck one 𝟙 symbol we define a new command \dsone which for the PDF output is defined as `\mathds{1}` and for the HTML we use the unicode character `\unicode{x1D7D9}`
-- `pdflatex` is preferred over `xelatex` because of the unexpected look of `\mathcal` and `\mathbb` fonts in the PDF output
+This book compiles fine with the following software configuration:
+`R_4.1.1
+bookdown_0.24.1
+knitr_1.33
+rmarkdown_2.10
+xfun_0.25
+Pandoc_2.14.1`
+
+## Boookdown issues and workarounds
+
 - In the Postponed Proofs Appendix `:::{.proof name="Proof of Theorem \@ref(label)}` blocks are used to write the proofs. This produces expected results in the PDF output while in the HTML the proofs begin with *Proof. (Proof of Thoerem)*
-- The `xymatrix` pacakge cannot be used for the HTML output, it is not supported by MathJax. Any diagram using `xymatrix` is therefore not rendered in the HTML otput and the message directing to the PDF version of the notes is displayed.
 - Mathematical symbols cannot be used inside theorem (and proof, definition etc.) names. Solution: write the name of a theorem in bold separately.
 - remark, proofs and solutions cannot be numbered and referenced in HTML. Solution: avoid referencing remarks, proofs, solutions
+- `pdflatex` is preferred over `xelatex` because of the unexpected look of `\mathcal` and `\mathbb` fonts in the PDF output and some versions of `xelatex` define `\C` internally which can cause errors.
+- Bookdown `0.22` added spurious lines at the end of proofs and other environments. Bookdown `0.22.17` failed to render theorems and other environments if they ended with a list. Bookdown `0.24.1` fixed both issues.
+
+## MathJax limitations and workaraounds
+
+- `\mathds` is not supported by MathJax. For the double struck one "𝟙" symbol we define a new command `\dsone` which for the PDF output is defined as `\mathds{1}` and for the HTML we use the unicode character `\unicode{x1D7D9}`
+- The `xymatrix` pacakge is not supported by MathJax. We have redefined the `xymatrix` command to issue a note about the missing diagram and referring the reader to the PDF version.
 
