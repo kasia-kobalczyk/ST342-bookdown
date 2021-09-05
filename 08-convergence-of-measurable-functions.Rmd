@@ -211,7 +211,8 @@ would like to show that $(\frac{X_n}{n})_{n\geqslant 1}$ converges in
 distribution to the exponential distribution with parameter $\lambda$.
 First, for $x \in [0,\infty)$ and $n \geqslant 1$, we can write
 $$\begin{gathered}
-F_{\frac{X_n}{n}}(x) = \mathbb{P}(X_n \leqslant n x) = \mathbb{P}(X_n \leqslant\lfloor{n x}\rfloor) = \\ = 1 - (1 - p_n)^{\lfloor{n x}\rfloor} = 1 - (1 - \frac{n p_n}{n})^{nx}(1 - \frac{n p_n}{n})^{\lfloor{n x}\rfloor - nx}.\end{gathered}$$
+F_{\frac{X_n}{n}}(x) = \mathbb{P}(X_n \leqslant n x) = \mathbb{P}(X_n \leqslant\lfloor{n x}\rfloor) = \\ = 1 - (1 - p_n)^{\lfloor{n x}\rfloor} = 1 - (1 - \frac{n p_n}{n})^{nx}(1 - \frac{n p_n}{n})^{\lfloor{n x}\rfloor - nx}.
+\end{gathered}$$
 Now, by observing that $$\nonumber
 (1 - \frac{n p_n}{n})^{nx} \xrightarrow{n\to\infty} e^{-\lambda x} \quad \text{and} \quad (1 - \frac{n p_n}{n})^{\lfloor{n x}\rfloor - nx} \xrightarrow{n\to\infty} 1,$$
 we get $$\nonumber
@@ -254,8 +255,10 @@ f_{X_n}(x) = \frac{1}{\frac{1}{n}\pi(1 + n^2x^2)} = \frac{n}{\pi(1+n^2x^2)}, \ x
 From Figure\ \@ref(fig:cauchy), we can see that as $n$ gets larger,
 $f_{X_n}(x)$ becomes closer to $f(x) = 0$, so we claim that
 $(X_n)_{n\geqslant 1}$ converges in distribution to $0$. For
-$x \in \mathbb{R}$ and $n \geqslant 1$, we have $$\begin{gathered}
-F_{X_n}(x) = \mathbb{P}(X_n \leqslant x) = \int_{-\infty}^{x} \frac{n}{\pi(1 + n^2 y^2)} \,\mathrm{d}y = \\ = \left[\frac{\arctan(n y)}{\pi}\right]_{-\infty}^{x} = \frac{1}{2} + \frac{\arctan(n x)}{\pi}\end{gathered}$$
+$x \in \mathbb{R}$ and $n \geqslant 1$, we have 
+$$\begin{gathered}
+F_{X_n}(x) = \mathbb{P}(X_n \leqslant x) = \int_{-\infty}^{x} \frac{n}{\pi(1 + n^2 y^2)} \,\mathrm{d}y = \\ = \left[\frac{\arctan(n y)}{\pi}\right]_{-\infty}^{x} = \frac{1}{2} + \frac{\arctan(n x)}{\pi}
+\end{gathered}$$
 Now, taking limit as $n \to \infty$ gives $$\nonumber
 \lim_{n\to\infty} F_{X_n}(x) =
 \begin{cases}
@@ -576,7 +579,8 @@ law of large numbers.
 
 ::: {.proof}
 We can suppose that $\mathbb{E}X_k = 0$ for all $k$. Expand
-$S_n^4$ as $$\begin{gathered}
+$S_n^4$ as
+$$\begin{gathered}
 S_n^4
 =
 (X_1+\cdots+X_n)^4
@@ -598,7 +602,8 @@ S_n^4
 +
 4!
 \sum_{\quad i < j < k < l} X_i X_j X_k X_l
-.\end{gathered}$$ By independence, we have $$\begin{gathered}
+.\end{gathered}$$
+By independence, we have $$\begin{gathered}
 \mathbb{E}S_n^4 =
 \sum_{i} \mathbb{E}X_i^4
 +
@@ -910,7 +915,7 @@ $c\in\mathbb{R}$. Then $X_n \xrightarrow{\mathbb{P}} c$.
 ::: {.proof}
 First, notice that by assumption $F_{X_n}(x) \to 0$ if $x<c$
 and $F_{X_n}(x) \to 1$ if $x>c$. Let $\varepsilon > 0$. Then
-\begin{gathered}
+$$\begin{gathered}
 \mathbb{P}(|X_n - c| > \varepsilon)
 \leqslant
 \mathbb{P}(X_n \leqslant c - \varepsilon)
@@ -923,7 +928,7 @@ F_{X_n}(c - \varepsilon)
 \to 0+1-1 = 0,
 %= \\ =
 %\lim_{n\to\infty} \Pb(X_n \geq c + \varepsilon) \leq \lim_{n\to\infty} \Pb(X_n > c + \frac{\varepsilon}{2}) = 1 - \lim_{n\to\infty} F_{X_n}(c + \frac{\varepsilon}{2}) = 0,
-\end{gathered}
+\end{gathered}$$
 so $X_n \xrightarrow{\mathbb{P}} c$, as claimed.
 :::
 

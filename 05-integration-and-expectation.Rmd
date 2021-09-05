@@ -441,9 +441,13 @@ $$\nonumber
 
 ::: {.proof}
 *Proof.* Let $\varepsilon \geqslant 0$ and $\alpha \geqslant 0$. Then we
-have that, $$\begin{gathered}
+have that, 
+$$
+\begin{gathered}
 \nonumber
-\int_\Omega |f|^\alpha \,\mathrm{d}\mu\geqslant\int_{\{|f| \geqslant\varepsilon\}} |f|^\alpha \,\mathrm{d}\mu\geqslant\int_{\{|f| \geqslant\varepsilon\}} \varepsilon^\alpha \,\mathrm{d}\mu=\\= \varepsilon^\alpha \int_\Omega \dsone_{\{|f| \geqslant\varepsilon\}}\,\mathrm{d}\mu= \varepsilon^\alpha \mu(\{|f|\geqslant\varepsilon\}),\end{gathered}$$
+\int_\Omega |f|^\alpha \,\mathrm{d}\mu\geqslant\int_{\{|f| \geqslant\varepsilon\}} |f|^\alpha \,\mathrm{d}\mu\geqslant\int_{\{|f| \geqslant\varepsilon\}} \varepsilon^\alpha \,\mathrm{d}\mu=\\= \varepsilon^\alpha \int_\Omega \dsone_{\{|f| \geqslant\varepsilon\}}\,\mathrm{d}\mu= \varepsilon^\alpha \mu(\{|f|\geqslant\varepsilon\}),
+\end{gathered}
+$$
 and by rearranging, the inequality follows.
 :::
 
@@ -548,7 +552,9 @@ Using $\sigma$-additivity of the expectation, $$\nonumber
 
 :::{.example}
 If $\mathbb{P}(X=n)= \frac{\lambda^n e^{-\lambda}}{n!}$ for
-$n \in \mathbb{N}_0$, then $$\begin{gathered}
+$n \in \mathbb{N}_0$, then 
+$$
+\begin{gathered}
 \nonumber
 EX
 =
@@ -566,7 +572,9 @@ EX
 =
 \lambda e^{-\lambda} e^\lambda
 =
-\lambda,\end{gathered}$$ giving the familiar formula for the expectation
+\lambda,
+\end{gathered}
+$$ giving the familiar formula for the expectation
 of a Poisson variable.
 :::
 
@@ -578,7 +586,8 @@ $$\mathbb{E}X = \sum_{n\in\mathbb{N}} \mathbb{P}( X \geqslant n).$$
 
 ::: {.proof}
 Let $A = \{0,1,2,3,\dots,+\infty\}$. Replacing $n$ by a dull
-sum over $k$, $$\begin{gathered}
+sum over $k$, 
+$$\begin{gathered}
 \nonumber
 \mathbb{E}X
 =
@@ -589,7 +598,8 @@ sum over $k$, $$\begin{gathered}
 = \sum_{k \in \mathbb{N}} \sum_{n \in A} \dsone_{n \geqslant k} \mathbb{P}(X=n)
 = \sum_{k \in \mathbb{N}} \sum_{n \geqslant k} \mathbb{P}(X=n)
 = \sum_{k \in \mathbb{N}} \mathbb{P}(X \geqslant k)
-,\end{gathered}$$ where
+,
+\end{gathered}$$ where
 Theorem\ \@ref(thm:seriestonelli) was used to interchange sums.
 :::
 
@@ -1054,7 +1064,9 @@ $a_1,\dots,a_k$. Let $0 < \alpha < 1$ and
 $A_n = \{ \omega: f_n(\omega) > \alpha g(\omega) \}$. Since
 $f \geqslant g$ and $0 \leqslant f_n \uparrow f$, for each $\omega$
 there is $n$ such that $f_n(\omega) \geqslant\alpha g(\omega)$, so
-$A_n \uparrow \Omega$ and $$\begin{gathered}
+$A_n \uparrow \Omega$ and
+$$
+\begin{gathered}
 \nonumber
 \int_\Omega f_n \,\mathrm{d}\mu\geqslant\int_\Omega(f_n \dsone_{A_n}) \,\mathrm{d}\mu\geqslant\int_\Omega(\alpha g \dsone_{A_n}) \,\mathrm{d}\mu
 = \\ =
@@ -1140,7 +1152,8 @@ knitr::include_graphics("./images/gkx.svg")
 Let $(h_n)_n$ be a sequence of
 non-negative extended Borel functions. Define
 $f_n = h_1 + \cdots + h_n$. Then $f_n \uparrow f := \sum_j h_j$, and
-by \@ref(eq:mctbis) we have $$\begin{gathered}
+by \@ref(eq:mctbis) we have 
+$$\begin{gathered}
 \nonumber
 \sum_{j=1}^\infty \int_\Omega h_j \,\mathrm{d}\mu
 =
@@ -1162,7 +1175,8 @@ $f$ is an indicator function. By linearity, it also holds when $f$ is a
 non-negative simple function.
 By \@ref(eq:mctbis), it holds for any non-negative extended Borel
 function $f$. Finally, if $f$ is an extended Borel function,
-$$\begin{gathered}
+$$
+\begin{gathered}
 \nonumber
 \int_\Omega (f \dsone_B) \,\mathrm{d}\mu
 =
@@ -1176,7 +1190,8 @@ $$\begin{gathered}
 \int_\Omega f^- \,\mathrm{d}(\mu_{|_B})
 =
 \int_\Omega f \,\mathrm{d}(\mu_{|_B})
-,\end{gathered}$$ and when one of the two is defined, these expressions
+\end{gathered}$$
+and when one of the two is defined, these expressions
 do not entail a "$\infty-\infty$."
 :::
 
@@ -1184,7 +1199,7 @@ do not entail a "$\infty-\infty$."
 We have already proved this identity when $g$
 is an indicator function. Just like in the previous proof, by linearity
 and \@ref(eq:mctbis), the identity holds for any non-negative extended
-Borel function $g$. Assuming $g$ is an extended Borel function,
+Borel function $g$. Assuming $g$ is an extended Borel function,$$
 \begin{gathered}
 \nonumber
 \int_{\Omega_2} g \,\mathrm{d}(f_*\mu)
@@ -1198,7 +1213,7 @@ Borel function $g$. Assuming $g$ is an extended Borel function,
 \int_{\Omega_1} (f^*g)^- \,\mathrm{d}\mu
 =
 \int_{\Omega_1} (f^*g) \,\mathrm{d}\mu
-,\end{gathered}
+,\end{gathered}$$
 and when one of the two is defined, these expressions
 do not entail a "$\infty-\infty$."
 :::
@@ -1232,7 +1247,8 @@ $$\begin{gathered}
 =
 \alpha \int_\Omega f \,\mathrm{d}\mu
 .
-\nonumber\end{gathered}$$ These expressions cannot contain
+\nonumber\end{gathered}$$
+These expressions cannot contain
 "$\infty-\infty$" because both integrals are defined. The case
 $\alpha \geqslant 0$ is analogous.
 
