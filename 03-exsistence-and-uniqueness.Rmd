@@ -58,7 +58,8 @@ missing a small bit, namely being closed under intersections.
 
 
 ::: {.definition}
-**($\pi$-system)** A class $\mathcal{C}$ of sets is called
+**($\pi$-system).**
+A class $\mathcal{C}$ of sets is called
 a *$\pi$-system* if it is closed under intersections, that is,
 $A \cap B \in \mathcal{C}$ for all $A,B \in \mathcal{C}$.
 :::
@@ -67,7 +68,8 @@ Good examples of $\pi$-systems are the classes listed in
 § \@ref(sub:borelreal), if we add $\emptyset$ to them.
 
 ::: {.definition #lambda}
-**($\lambda$-system)**. Let $\Omega$ be a sample space. A
+**($\lambda$-system).**
+Let $\Omega$ be a sample space. A
 class $\mathcal{D}$ of subsets of $\Omega$ is a *$\lambda$-system on
 $\Omega$*, if $\Omega \in \mathcal{D}$ and it is closed under complement
 and countable disjoint unions, that is,

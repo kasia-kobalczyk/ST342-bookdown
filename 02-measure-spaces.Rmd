@@ -117,8 +117,9 @@ $\mathcal{E}$.
 
 We now prove that $\sigma(\mathcal{E})$ is indeed well-defined.
 
-::: {.proof}
-*(by exercise..)* Let $\{\mathcal{A}_\alpha\}_{\alpha \in \Lambda}$
+::: {.proof name="Proof by exercise"}
+[//]: *(by exercise..)*
+Let $\{\mathcal{A}_\alpha\}_{\alpha \in \Lambda}$
 be a family of $\sigma$-algebras on $\Omega$, where $\Lambda$ is an
 arbitrary *non-empty* index set. Prove that
 $\bigcap_{\alpha \in \Lambda}\mathcal{A}_\alpha$ is also a
@@ -172,7 +173,10 @@ $\mathcal{E}_1 \subseteq \sigma(\mathcal{E}_2)$. Prove that
 $\sigma(\mathcal{E}_1) \subseteq \sigma(\mathcal{E}_2)$.
 :::
 
+:::{.exercise}
 Prove the above proposition.
+:::
+
 
 ### The Borel sets on $\mathbb{R}$ and $\overline{\mathbb{R}}$ {#sub:borelreal}
 
@@ -292,9 +296,9 @@ if
 
 In this case, it also satisfies:
 
-1.  $\emptyset \in \mathcal{A}$,
+4.  $\emptyset \in \mathcal{A}$,
 
-2.  $A, B \in \mathcal{A} \implies A \cap B \in \mathcal{A}$.
+5.  $A, B \in \mathcal{A} \implies A \cap B \in \mathcal{A}$.
 
 In other words, an algebra on $\Omega$ is a class of subsets of
 $\Omega$, which contains $\Omega$ and is *stable under finitely many set
@@ -481,7 +485,7 @@ present everywhere in the sense that it intersects every tiny open
 interval, its length is actually zero.
 :::
 
-:::{.example name="Restriction}
+:::{.example name="Restriction"}
 Given real numbers $a < b$, the function $\mu$ given by
 $$\mu(A) = m(A \cap [a,b])$$ is a measure on $(\mathbb{R},\mathcal{B})$.
 :::
