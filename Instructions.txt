@@ -1,0 +1,33 @@
+
+## Dummy subsection {#sub:dummy}
+
+This is a dummy equation
+
+This section is to show how we cen refer to other sections and theorems. 
+
+Referencing the Theorems, exmalpes and equations is done by using their labels
+It is enough to enter `\@ref(label)` e.g.:
+
+- Theorem \@ref(thm:seriesfubini) is a very important one.
+- Don't forget to solve Example \@ref(exm:vitali) before the exam.
+- Equation \@ref(eq:series) can be quite tricky.
+
+To reference a section by its number we can do it the same way with `\@ref(label)`, e.g.:
+
+- In Section \@ref(sub:eventsinfty) we introduce the topic of ...
+
+To reference a section by its title we can do this by witting the section 
+header in square brackets `[Section name]`, e.g.:
+
+- In Section [Events at infinity] we introduce the topic of ...
+
+Cross-references still work even when we refer to an item that is not on the 
+current page of the HTML output.
+
+We can link to the elements from the References (Bibliography) using their keys: 
+`@key` gives the author and the year in brackets, use `[@key]` for both the 
+author and the year in brackets, e.g.:
+
+- See @Cohn13 for more details
+- See [@Cohn13] for more details
+

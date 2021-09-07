@@ -37,7 +37,9 @@ source code along with the typeset material, and please keep this
 request to those who receive it. This is a kind request from the author,
 not a legal requirement.
 
-The source code of the current version can be found at \\ https://github.com/Kaasiak/ST342-bookdown
+The source code of the current version can be found at  
+
+[https://github.com/Kaasiak/ST342-bookdown](https://github.com/Kaasiak/ST342-bookdown){target="_blank" rel="noopener noreferrer nofollow"}
 
 **Attribution**
 
