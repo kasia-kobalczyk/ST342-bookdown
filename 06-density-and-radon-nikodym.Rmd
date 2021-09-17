@@ -69,11 +69,20 @@ non-negative extended Borel function $f$ such
 that \@ref(eq:radon) holds.
 :::
 
-:::{.remark} 
+:::{.remark}
 We say *the* Radon-Nikodým derivative because it is unique, in the following
-sense. Given a measure $\nu$, a $\sigma$-finite measure $\mu$, and two
+sense.
+:::
+
+:::{.proposition #densitiesequal} 
+Given a $\sigma$-finite measure $\mu$, and two non-negative
 extended Borel functions $f$ and $g$ such
-that \@ref(eq:radon) holds, then $f = g$ for $\mu$-a.e. $\omega$.
+that
+\[
+\int_A f \dmu = \int_A g \dmu
+\]
+for all $A \in \cF$,
+we have $f = g$ for $\mu$-a.e. $\omega$.
 :::
 
 ::: {.proof}
@@ -402,17 +411,29 @@ The above identity means whenever one of the integrals is defined,
 the other one is also defined and they coincide.
 :::
 
-:::{.exercise}
-Suppose that two extended random variables $Z$ and $W$
-satisfy \@ref(eq:condexp1)
-and \@ref(eq:condexp2). Prove that $\mathbb{P}(Z=W)=1$.
-:::
-
 :::{.remark}
 The above definition says *the* conditional expectation because, if
-there is such a function, it is unique in the a.s. sense. Conversely, if
-$Z$ satisfies \@ref(eq:condexp2) and $W = Z$ a.s., then $W$ also
-satisfies \@ref(eq:condexp2).
+there is such a function, it is unique in the a.s.\ sense.
+:::
+
+[comment]: # (Conversely, if $Z$ satisfies \@ref(eq:condexp2) and $W = Z$ a.s., then $W$ also satisfies \@ref(eq:condexp2).)
+
+:::{.proposition}
+Suppose $\mathbb{E} X$ is defined and there are two extended random
+variables $Z$ and $\tilde{Z}$
+that
+satisfy \@ref(eq:condexp1)
+and \@ref(eq:condexp2).
+Then $\mathbb{P}(Z=\tilde{Z})=1$.
+:::
+
+:::{.proof}
+We can assume without loss of generality that $\mathbb{E} X \ne -\infty$, so $Z^-$ and $\tilde{Z}^-$ are integrable.
+By changing $Z$ and $\tilde{Z}$ on a set of measure zero, we can assume that $Z^-$ and $\tilde{Z}^-$ are finite for all $\omega$.
+By linearity of the integral, $\int_A (Z+Z^-+\tilde{Z}^-) \,\dd\Pb = \int_A (\tilde{Z}+Z^-+\tilde{Z}^-) \,\dd\Pb$ for all $A \in \cG$.
+By Proposition\ \@ref(prp:densitiesequal),
+$Z+Z^-+\tilde{Z}^- = \tilde{Z}+Z^-+\tilde{Z}^-$ a.s.,
+which proves the claim.
 :::
 
 ::: {.theorem}
@@ -421,7 +442,7 @@ defined, then the conditional expectation of $X$ given $\mathcal{G}$ is
 defined.
 :::
 
-::: {.proof name="non-negative integrable case"}
+::: {.proof name="Proof (non-negative integrable case)"}
 Suppose that $X$ is integrable, and define the measure $\nu$ on $(\Omega,\mathcal{G})$ by
 $$\nu(A) = \int_A X \,\mathrm{d}\mathbb{P}$$ for $A \in \mathcal{G}$.
 Then $\nu(\Omega) = \mathbb{E}X < \infty$, so $\nu$ is $\sigma$-finite.
@@ -433,7 +454,7 @@ satisfies both \@ref(eq:condexp1)
 and \@ref(eq:condexp2).
 :::
 
-::: {.proof name="non-negative case"}
+::: {.proof name="Proof (non-negative case)"}
 ow suppose that $X$ is a non-negative
 finite random variable, not necessarily integrable. Then $X$ can be
 written as $X = \sum_n X_n$ where each $X_n$ is an integrable random
@@ -443,7 +464,8 @@ expectation, which we denote $Z_n$.
 We take $Z := \sum_n Z_n$. Note that $Z$ is also non-negative and
 $\mathcal{G}$-measurable. By the previous case and $\sigma$-additivity
 of the integral, for every $A\in\mathcal{G}$,
-$$\int_A Z \,\mathrm{d}\mathbb{P}
+$$
+\int_A Z \,\mathrm{d}\mathbb{P}
 =
 \sum_n
 \int_A Z_n \,\mathrm{d}\mathbb{P}
@@ -452,10 +474,12 @@ $$\int_A Z \,\mathrm{d}\mathbb{P}
 \int_A X_n \,\mathrm{d}\mathbb{P}
 =
 \int_A X \,\mathrm{d}\mathbb{P}
-,$$ which concludes the proof.
+,
+$$
+which concludes the proof.
 :::
 
-::: {.proof name="general case"}
+::: {.proof name="Proof (general case)"}
 We can assume that $\mathbb{E}X^- < \infty$.
 From the previous case, there exist two $\mathcal{G}$-measurable
 functions $Z^\pm$ such that
