@@ -44,7 +44,8 @@ Pandoc_2.14.1`
 - In the Postponed Proofs Appendix `:::{.proof name="Proof of Theorem \@ref(label)}` blocks are used to write the proofs. This produces expected results in the PDF output while in the HTML the proofs begin with *Proof. (Proof of Thoerem)*
 - Mathematical symbols cannot be used inside theorem (and proof, definition etc.) names. Solution: write the name of a theorem in bold separately.
 - remark, proofs and solutions cannot be numbered and referenced in HTML. Solution: avoid referencing remarks, proofs, solutions
-- `pdflatex` is preferred over `xelatex` because of the unexpected look of `\mathcal` and `\mathbb` fonts in the PDF output and some versions of `xelatex` define `\C` internally which can cause errors.
+- `pdflatex` is preferred over `xelatex` because of the unexpected look of `\mathcal` and `\mathbb` fonts in the PDF output
+- Package `hyperref` with option `unicode` may define `\C` internally and cause errors if author also using it.
 - Bookdown `0.22` added spurious lines at the end of proofs and other environments. Bookdown `0.22.17` failed to render theorems and other environments if they ended with a list. Bookdown `0.24.1` fixed both issues.
 
 ## MathJax limitations and workaraounds
